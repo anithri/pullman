@@ -15,7 +15,6 @@
  *= require 'tachyons-custom/tachyons.css'
  *= require '_colors.css'
  *= require '_variables.css'
- *= require 'common.css'
  *= require '_typography.css'
  *= require '_skins.css'
  *= require_self

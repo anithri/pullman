@@ -11,7 +11,6 @@ import Footer from '../../components/Footer'
 
 class GameLayout extends React.Component {
   render () {
-    console.log('styles',styles)
     return (
       <App>
         <Grid className={styles.grid} >

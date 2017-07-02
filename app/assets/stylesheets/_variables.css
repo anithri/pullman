@@ -1,4 +1,4 @@
-@import 'tachyons-custom/_variables.css';
+@import './tachyons-custom/css/_variables.css';
 
 :root {
     --letter-spacing-normal: var(--letter-spacing-1);

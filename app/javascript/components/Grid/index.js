@@ -11,7 +11,6 @@ class Grid extends React.Component {
   render () {
     const classNames = cx(styles.grid, this.props.className)
     const regions = React.Children.map(this.props.children, child => {
-      console.log(child)
       return child
     })
     return (
