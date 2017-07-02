@@ -1,24 +1,27 @@
-<%= javascript_pack_tag 'game_scaffold' %>
-<%= stylesheet_pack_tag 'game_scaffold' %>
+<%= content_for :head do %>
+  <%= stylesheet_pack_tag 'game_scaffold' %>
+  <%= javascript_pack_tag 'game_scaffold' %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Games</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th>Genres</th>
-      <th>Mechanics</th>
-      <th>Rating</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Genres</th>
+    <th>Mechanics</th>
+    <th>Rating</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @games.each do |game| %>
+  <% @games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
         <td><%= game.author_id %></td>
@@ -30,7 +33,7 @@
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

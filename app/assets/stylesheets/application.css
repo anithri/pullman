@@ -21,14 +21,14 @@
  *= require_self
  */
 
-html, body, #app {
+html, body, #appContainer {
     margin: var(--spacing-none); /* .ma0 */
     padding: var(--spacing-none); /* .pa0 */
     width: 100%; /* .w-100 */
     height: 100%; /* .h-100 */
 }
 
-#app {
+#appContainer {
     background-color: var(--bg-body-color,#f0f0f0);
 }
 

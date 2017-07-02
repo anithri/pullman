@@ -21,6 +21,6 @@ Hello.propTypes = {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Hello />,
-    document.getElementById('app'),
+    document.getElementById('appContainer'),
   )
 })

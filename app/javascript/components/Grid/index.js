@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import styles from './styles.css'
+import styles from './Grid.css'
 
 const propTypes = {
   className: PropTypes.string,
@@ -11,6 +11,7 @@ class Grid extends React.Component {
   render () {
     const classNames = cx(styles.grid, this.props.className)
     const regions = React.Children.map(this.props.children, child => {
+      console.log(child)
       return child
     })
     return (

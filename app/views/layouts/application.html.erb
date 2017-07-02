@@ -9,9 +9,10 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= yield :head if content_for?(:head) %>
   </head>
   <body>
-  <div id="app">
+  <div id="appContainer">
     <%= yield %>
   </div>
   </body>

@@ -9,6 +9,6 @@ import GameLayout from 'pages/GameLayout'
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <GameLayout />,
-    document.getElementById('app'),
+    document.getElementById('appContainer'),
   )
 })
