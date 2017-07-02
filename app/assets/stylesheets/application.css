@@ -13,25 +13,22 @@
  * # I moved this into assets/stylesheets because I
  * # Could not get it read from vendor/assets
  *= require 'tachyons-custom/tachyons.css'
+ *= require '_colors.css'
+ *= require '_variables.css'
+ *= require 'common.css'
+ *= require '_typography.css'
+ *= require '_skins.css'
  *= require_self
  */
 
-:root {
-    --base-bg-color: #ffcc99;
-}
-
 html, body, #app {
-    background-color: var(--light-gray); /* .bg-light-gray */
     margin: var(--spacing-none); /* .ma0 */
+    padding: var(--spacing-none); /* .pa0 */
     width: 100%; /* .w-100 */
     height: 100%; /* .h-100 */
 }
 
 #app {
-    background-color: var(--washed-yellow); /* .bg-washed-yellow */
-
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1024px;
-    height: 100%; /* .h-100 */
+    background-color: var(--bg-body-color,#f0f0f0);
 }
+

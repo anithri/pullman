@@ -1,0 +1,4 @@
+.footer {
+  width: 100%; /* .w-100 */
+  background-color: var(--light-purple); /* .bg-light-purple */
+}
