@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+    --base-bg-color: #ffcc99;
+}
+
+html, body, #app {
+    margin: var(--spacing-none); /* .ma0 */
+    width: 100vw; /* .w-100 */
+    height: 100vh; /* .h-100 */
+}
+
+#app {
+    background-color: var(--base-bg-color);
+    margin: var(--spacing-none); /* .ma0 */
+    width: 100vw; /* .w-100 */
+    height: 100vh; /* .h-100 */
+}
