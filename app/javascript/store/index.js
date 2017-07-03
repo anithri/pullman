@@ -1,9 +1,10 @@
 import { applyMiddleware, compose, createStore } from 'redux'
+import { apiMiddleware } from 'redux-api-middleware';
 
 import makeRootReducer from 'store/reducers'
 
 export default (initialState = {}) => {
-  const middleware = []
+  const middleware = [apiMiddleware]
 
   const enhancers = []
 
