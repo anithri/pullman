@@ -4,6 +4,15 @@ const FETCH_GAMES_REQUEST = 'app/fetch_games/request'
 const FETCH_GAMES_SUCCESS = 'app/fetch_games/success'
 const FETCH_GAMES_FAILURE = 'app/fetch_games/failure'
 
+const FETCH_GAME_REQUEST = 'app/fetch_game/request'
+const FETCH_GAME_SUCCESS = 'app/fetch_game/success'
+const FETCH_GAME_FAILURE = 'app/fetch_game/failure'
+
+const SHOW_GAME = 'app/show_game'
+const EDIT_GAME = 'app/edit_game'
+const DELETE_GAME = 'app/delete_game'
+const INDEX_GAMES = 'app/index_game'
+
 // Constants
 
 export const constants = {

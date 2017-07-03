@@ -7,7 +7,8 @@ const propTypes = {
   className: PropTypes.string,
   headers: PropTypes.arrayOf(PropTypes.string),
   rows: PropTypes.arrayOf(PropTypes.object),
-  keys: PropTypes.arrayOf(PropTypes.string)
+  keys: PropTypes.arrayOf(PropTypes.string),
+  actions: PropTypes.arrayOf(PropTypes.element),
 }
 
 class Table extends React.Component {
@@ -17,6 +18,22 @@ class Table extends React.Component {
     this.tableHeaders = this.tableHeaders.bind(this)
     this.tableRow = this.tableRow.bind(this)
     this.tableBody = this.tableBody.bind(this)
+    this.tableActions = this.tableActions.bind(this)
+    this.hasActions = this.hasActions.bind(this)
+  }
+
+  hasActions () {
+    return this.props.actions.length > 0
+  }
+
+  tableActions (obj) {
+    return (
+      <td>
+        <button>Show</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </td>
+    )
   }
 
   tableHeaders () {
@@ -26,7 +43,8 @@ class Table extends React.Component {
 
   tableRow (obj) {
     const cells = this.props.keys.map(k => <td key={k}>{obj[k]}</td>)
-    return (<tr key={obj.id}>{cells}</tr>)
+    const actions = this.tableActions(obj)
+    return (<tr key={obj.id}>{cells}{actions}</tr>)
   }
 
   tableBody () {
@@ -40,10 +58,10 @@ class Table extends React.Component {
     return (
       <table className={classNames}>
         <thead>
-          {headers}
+        {headers}
         </thead>
         <tbody>
-          {body}
+        {body}
         </tbody>
       </table>
     )

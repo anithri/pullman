@@ -1,11 +1,17 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import { actions} from 'store/games/reducers'
-import { gameCount, gameList } from 'store/games/selectors'
-import Table from 'components/Table'
-const headers = ['Name','Mechanics','Description']
-const keys = ['name','mechanics','description']
+import {actions} from 'store/games/reducers'
+import {gameCount, gameList} from 'store/games/selectors'
+import {withProps} from 'recompose'
+import OrigTable from 'components/Table'
+
+const Table = withProps({
+  headers: ['Name', 'Mechanics', 'Description', 'Actions'],
+  keys: ['name', 'mechanics', 'description']
+})(OrigTable)
+
+
 const propTypes = {
   className: PropTypes.string,
   gameCount: PropTypes.number,
@@ -14,17 +20,38 @@ const propTypes = {
 }
 
 class Game extends React.Component {
-  componentDidMount() {
+  constructor (props) {
+    super(props)
+    this.state = {
+      view: 'index'
+    }
+  }
+
+  componentDidMount () {
     this.props.onLoadFromApi()
   }
 
   render () {
+    var content
+    switch (this.state.view) {
+      case 'create':
+        break;
+      case 'delete':
+        break;
+      case 'show':
+        break;
+      case 'edit':
+        break;
+      case 'index':
+      default:
+        content = (<Table rows={this.props.gameList}
+                          onShow={this.props.onShow}
+                          onEdit={this.props.onEdit}
+                          onDelete={this.props.onDelete} />)
+    }
     return (
       <div className={this.props.className}>
-        <Table headers={headers}
-               rows={this.props.gameList}
-               keys={keys}
-        />
+        {content}
       </div>
     )
   }
@@ -38,12 +65,23 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLoadFromApi: (e) => {dispatch(actions.fetchGames())}
+    onLoadFromApi: (e) => {
+      dispatch(actions.fetchGames())
+    },
+    onShow: (e) => {
+      dispatch(actions.showGame())
+    },
+    onEdit: (e) => {
+      dispatch(actions.editGame())
+    },
+    onDelete: (e) => {
+      dispatch(actions.deleteGame())
+    }
     // onChangeConfig: (e) => { dispatch(actions.changeConfig(e)) },
     // onChangeSeason: (e) => { dispatch(actions.changeSeason(e)) },
     // onChangePedPoint: (e) => { dispatch(actions.changePedPoint(e)) }
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Game)
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
 
