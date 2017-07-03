@@ -1,13 +1,18 @@
 import { createSelector } from 'reselect'
 
-const gamesList = state => Object.values(state.games.items)
+const gameItems = state => state.games.items
 
-const gamesCount = createSelector(
-  gamesList,
-  gamesArr => gamesArr.length
+const gameList = createSelector(
+  gameItems,
+  items => Object.values(items) || []
+)
+
+const gameCount = createSelector(
+  gameList,
+  gameArr => gameArr.length
 )
 
 export {
-  gamesList,
-  gamesCount
+  gameList,
+  gameCount
 }
