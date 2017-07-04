@@ -1,9 +1,37 @@
 .grid {
+  height: 100%; /* .h-100 */
+  width: 100%; /* .w-100 */
+  padding: var(--spacing-none); /* .pa0 */
+  margin: var(--spacing-none); /* .ma0 */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+          "header"
+          "main"
+          "footer";
+
 }
 
-.gridItem {
+.gridRegion {
 
+}
+
+.default {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main {
+  grid-area: main;
 }

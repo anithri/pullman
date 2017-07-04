@@ -4163,6 +4163,10 @@ react-router-dom@^4.1.1:
     prop-types "^15.5.4"
     react-router "^4.1.1"
 
+react-router-redux-dom-link@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-router-redux-dom-link/-/react-router-redux-dom-link-0.1.2.tgz#58dabf590a8bd7162331be0b88264a822564e3e0"
+
 react-router-redux@next:
   version "5.0.0-alpha.6"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-5.0.0-alpha.6.tgz#7418663c2ecd3c51be856fcf28f3d1deecc1a576"

@@ -1,20 +1,24 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import cx from 'classnames'
-import styles from './Games.css'
 
-import Grid from 'components/Grid'
-import Header from 'components/Header'
-import GameContainer from 'containers/Game'
-import Footer from 'components/Footer'
+import Grid,{addRegion} from 'components/Grid'
+
+import OrigHeader from 'components/Header'
+import OrigGameContainer from 'containers/Game'
+import OrigFooter from 'components/Footer'
+
+const Header = addRegion('Header')(OrigHeader)
+const GameContainer = addRegion('Main')(OrigGameContainer)
+const Footer = addRegion('Footer')(OrigFooter)
 
 class Games extends React.Component {
   render () {
     return (
-      <Grid className={styles.grid} >
-        <Header className={styles.header} />
-        <GameContainer className={styles.main} />
-        <Footer className={styles.footer} />
+      <Grid layout='app' >
+        <Header />
+        <GameContainer />
+        <Footer />
       </Grid>
     )
   }
