@@ -20,7 +20,10 @@
  *= require_self
  */
 
-html, body, #appContainer {
+html,
+body,
+#appContainer,
+.max {
     margin: var(--spacing-none); /* .ma0 */
     padding: var(--spacing-none); /* .pa0 */
     width: 100%; /* .w-100 */

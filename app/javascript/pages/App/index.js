@@ -1,25 +1,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-
 import {Helmet} from 'react-helmet';
 
-import createStore from 'store'
-
-const initialState = {
-  app: {
-    title: 'Wooticus Prime'
-  },
-  games: {
-    items: []
-  }
-}
+import createStore, {APP_HISTORY} from 'store'
+import initialState from 'store/initial_state.json'
+import PageRoutes from 'pages/routes'
+import styles from './App.css'
 
 const store = createStore(initialState)
-
-
-// import PropTypes from 'prop-types'
-// import cx from 'classnames'
-import styles from './App.css'
 
 class App extends React.Component {
   render () {
@@ -31,7 +19,7 @@ class App extends React.Component {
             <title>{initialState.app.title}</title>
             <link rel="canonical" href="http://mysite.com/example"/>
           </Helmet>
-          {this.props.children}
+            <PageRoutes history={APP_HISTORY}/>
         </div>
       </Provider>
     )
@@ -39,4 +27,3 @@ class App extends React.Component {
 }
 
 export default App
-

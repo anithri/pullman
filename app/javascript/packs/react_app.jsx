@@ -4,11 +4,11 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import GameLayout from 'pages/GameLayout'
+import App from 'pages/App'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <GameLayout />,
+    <App />,
     document.getElementById('appContainer'),
   )
 })
