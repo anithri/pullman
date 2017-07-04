@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'react-router-redux-dom-link';
-
 import cx from 'classnames'
 import styles from './Home.css'
 
@@ -16,7 +15,7 @@ const PageContent = addRegion('main')(OrigPageContent)
 class HomePage extends React.Component {
   render () {
     return (
-      <Grid layout="app">
+      <Grid layout="app" className={styles.Home}>
         <Header/>
         <PageContent/>
         <Footer/>
