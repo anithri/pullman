@@ -5,11 +5,11 @@ import cx from 'classnames'
 import Grid,{addRegion} from 'components/Grid'
 
 import OrigHeader from 'components/Header'
-import OrigGameContainer from 'containers/Game'
 import OrigFooter from 'components/Footer'
+import GameRoutes from './routes'
 
 const Header = addRegion('Header')(OrigHeader)
-const GameContainer = addRegion('Main')(OrigGameContainer)
+const GameContent = addRegion('Main')(GameRoutes)
 const Footer = addRegion('Footer')(OrigFooter)
 
 class Games extends React.Component {
@@ -17,7 +17,7 @@ class Games extends React.Component {
     return (
       <Grid layout='app' >
         <Header />
-        <GameContainer />
+        <GameContent match={this.props.match}/>
         <Footer />
       </Grid>
     )

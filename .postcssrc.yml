@@ -1,5 +1,7 @@
 plugins:
   postcss-smart-import: {}
 #  precss: {}
-  postcss-cssnext: {}
-  autoprefixer: {}
+  postcss-cssnext:
+    postcss-custom-properties:
+      warn: false
+#  autoprefixer: {}

@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'react-router-redux-dom-link';
-import cx from 'classnames'
 import styles from './Home.css'
 
 import Grid, {addRegion} from 'components/Grid'

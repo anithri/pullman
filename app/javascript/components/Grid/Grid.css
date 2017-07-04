@@ -1,8 +1,8 @@
 .grid {
   height: 100%; /* .h-100 */
   width: 100%; /* .w-100 */
-  padding: var(--spacing-none); /* .pa0 */
-  margin: var(--spacing-none); /* .ma0 */
+  padding: var(--spacing-none,0); /* .pa0 */
+  margin: var(--spacing-none,0); /* .ma0 */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -10,18 +10,15 @@
           "header"
           "main"
           "footer";
-
 }
 
 .gridRegion {
-
+  padding: var(--spacing-small, 0.5rem ); /* .pa2 */
 }
 
 .default {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
-
-
 }
 
 .header {

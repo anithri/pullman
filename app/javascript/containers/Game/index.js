@@ -22,37 +22,15 @@ const propTypes = {
 class Game extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {
-      view: 'index'
-    }
   }
-
-  componentDidMount () {
-    this.props.onLoadFromApi()
-  }
-
   render () {
-    var content
-    switch (this.state.view) {
-      case 'create':
-        break;
-      case 'delete':
-        break;
-      case 'show':
-        break;
-      case 'edit':
-        break;
-      case 'index':
-      default:
-        content = (<Table rows={this.props.gameList}
-                          onShow={this.props.onShow}
-                          onEdit={this.props.onEdit}
-                          onDelete={this.props.onDelete} />)
+    const actions = {
+
+
     }
     return (
-      <div className={this.props.className}>
-        {content}
-      </div>
+      <Table items={this.props.gameList}
+             actions={this.props.actions} />
     )
   }
 }

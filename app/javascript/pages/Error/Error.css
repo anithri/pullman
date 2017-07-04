@@ -1,3 +1,3 @@
 .error {
-  background-color: var(--light-red); /* .bg-light-red */
+  background-color: var(--light-red,lightpink); /* .bg-light-red */
 }
