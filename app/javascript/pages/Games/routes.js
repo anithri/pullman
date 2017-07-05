@@ -1,22 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import {Route, Switch} from 'react-router'
 import routeShape from 'shapes/route'
 import matchShape from 'shapes/match'
 
 import {
-  ListView,
-  CreateView,
-  DetailsView,
-  EditView
-} from 'containers/Game/views'
+  ListScreen,
+  CreateScreen,
+  DetailsScreen,
+  EditScreen
+} from 'screens/Game'
 
 const defaultRoutes = [
-  {path: '/', view: ListView, isExact: true},
-  {path: '/new', view: CreateView},
-  {path: '/:id(\\d+)/edit', view: EditView},
-  {path: '/:id(\\d+)', view: DetailsView}
+  {path: '/', screen: ListScreen, isExact: true},
+  {path: '/new', screen: CreateScreen},
+  {path: '/:id(\\d+)/edit', screen: EditScreen},
+  {path: '/:id(\\d+)', screen: DetailsScreen}
 ]
 
 class GameRoutes extends React.Component {
@@ -27,13 +26,11 @@ class GameRoutes extends React.Component {
   childRoutes () {
     const routes = this.props.routes
     const baseUrl = this.props.match.url
-
-    return routes.map(({path,view,isExact}) => {
-
+    return routes.map(({path,screen,isExact}) => {
       let childPath = baseUrl + path
       return (
         <Route path={childPath}
-               component={view}
+               component={screen}
                exact={!!isExact}
                key={childPath}
         />
@@ -42,6 +39,7 @@ class GameRoutes extends React.Component {
   }
 
   render () {
+    console.log('GameRouts#props', this.props)
     return (
       <div className={this.props.className}>
         <Switch>
@@ -62,5 +60,4 @@ GameRoutes.propTypes = {
 GameRoutes.defaultProps = {
   routes: defaultRoutes,
 }
-
 export default GameRoutes

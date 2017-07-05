@@ -6,25 +6,25 @@ import Grid,{addRegion} from 'components/Grid'
 
 import OrigHeader from 'components/Header'
 import OrigFooter from 'components/Footer'
-import GameRoutes from './routes'
+// BUILD authorization should happen here and should
+//       apply policy to the routes to eliminate those we don't use
+import currentRoutes  from './routes'
 
 const Header = addRegion('Header')(OrigHeader)
-const GameContent = addRegion('Main')(GameRoutes)
+const GamesRoutes = addRegion('Main')(currentRoutes)
 const Footer = addRegion('Footer')(OrigFooter)
 
-class Games extends React.Component {
+class GamesPage extends React.Component {
   render () {
+    console.log('GamePage#props',this.props)
     return (
       <Grid layout='app' >
         <Header />
-        <GameContent match={this.props.match}/>
+        <GamesRoutes match={this.props.match}/>
         <Footer />
       </Grid>
     )
   }
 }
 
-export default Games
-
-
-
+export default GamesPage
