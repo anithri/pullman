@@ -1,12 +1,8 @@
 import PropTypes from 'prop-types'
-
+import {elementShape} from 'shapes/element'
 export const routeShape = PropTypes.shape({
   path: PropTypes.string.isRequired,
-  view: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.node,
-    PropTypes.element
-  ]),
+  view: elementShape,
   isExact: PropTypes.bool
 })
 

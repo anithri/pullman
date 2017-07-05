@@ -3,6 +3,20 @@
     "title": "Wooticus Prime"
   },
   "games": {
+    "cols": [
+      {
+        "col": "id",
+        "label": false
+      },
+      {
+        "col": "name",
+        "label": "Name"
+      },
+      {
+        "col": "description",
+        "label": "Description"
+      }
+    ],
     "items": []
   }
 }

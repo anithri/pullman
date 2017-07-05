@@ -5,8 +5,12 @@ import PropTypes from 'prop-types'
 // import {oneSelector, twoSelector} from 'store/myModel/selectors'
 import gameShape from 'shapes/game'
 
+
+
+
 const propTypes = {
-  items: PropTypes.arrayOf(gameShape)
+  items: PropTypes.array,
+
   view: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
   // TODO BUILD filter, sorting, pagination, authorization
 }

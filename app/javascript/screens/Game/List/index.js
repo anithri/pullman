@@ -18,7 +18,7 @@ class List extends React.Component {
   render () {
     const nestPath = this.nestPath
     return (
-      <div>
+      <div >
         <h3>containers # Game # Components # List</h3>
         <ul>
           <li><Link to={nestPath("/new")}>New</Link></li>
