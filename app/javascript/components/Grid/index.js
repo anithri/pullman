@@ -5,11 +5,9 @@ import styles from './Grid.css'
 import addRegion from './Region'
 
 const propTypes = {
-  layout: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired
 }
-
 
 class Grid extends React.Component {
   render () {

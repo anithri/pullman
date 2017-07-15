@@ -1,20 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import styles from './Grid.css'
+import styles from './GameGrid.css'
 import addRegion from './Region'
 
 const propTypes = {
-  layout: PropTypes.string.isRequired,
   className: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired
 }
 
 
-class Grid extends React.Component {
+class GameGrid extends React.Component {
   render () {
     const classNames = cx(
-      styles[this.props.layout],
       styles.grid, this.props.className
     )
 
@@ -25,9 +23,9 @@ class Grid extends React.Component {
     )
   }
 }
-Grid.propTypes = propTypes
+GameGrid.propTypes = propTypes
 
-export default Grid
+export default GameGrid
 export {
   addRegion
 }

@@ -5,6 +5,7 @@ module.exports = {
   fileMapTokens () {
     return {
       __screen__: (options) => {
+        console.log('options',options)
         return options.settings.getSetting('screenPath')
       }
     }

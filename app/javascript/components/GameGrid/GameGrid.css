@@ -4,6 +4,7 @@
   padding: var(--spacing-none, 0); /* .pa0 */
   margin: var(--spacing-none, 0); /* .ma0 */
   display: grid;
+  grid-gap: var(--spacing-extra-small);
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 2fr 2fr 1fr;
   grid-template-areas: "player1 summary player2" "player1 main player2" "player3 main player4" "player3 messages player4";
@@ -11,6 +12,11 @@
 
 .region {
   padding: var(--spacing-small, 0.5rem); /* .pa2 */
+  border-radius: var(--border-radius-3); /* .br3 */
+  border-style: solid; /* .ba */
+  border-width: 1px;
+  background-color: var(--white-10); /* .bg-white-10 */
+
 }
 
 .player1 {
