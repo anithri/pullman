@@ -5,7 +5,7 @@ class PageContent extends React.Component {
   render () {
     return (
         <main className={this.props.className}>
-          <h1>Woot, I'm a home page</h1>
+          <h1>Woot, I'm an about page</h1>
         </main>
     )
   }

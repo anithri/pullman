@@ -13,7 +13,6 @@ class PageRoutes extends React.Component {
         <div className="max">
           <Switch>
             <Route path="/" exact component={HomePage}/>
-            <Route path="/games" component={GamesPage}/>
             <Route component={ErrorPage}/>
           </Switch>
         </div>
