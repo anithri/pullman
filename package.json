@@ -47,6 +47,7 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "redux-cli": "^1.9.0",
     "webpack-dev-server": "^2.5.0"
   }
 }

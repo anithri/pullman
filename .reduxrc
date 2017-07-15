@@ -1,7 +1,8 @@
 {
-  "sourceBase":"",
-  "testBase":"",
-  "smartPath":"",
-  "dumbPath":"",
-  "fileCasing":""
+  "sourceBase": "app/javascript",
+  "testBase": "test/javascript",
+  "smartPath": "containers",
+  "dumbPath": "components",
+  "screenPath": "screens",
+  "fileCasing": "pascal"
 }

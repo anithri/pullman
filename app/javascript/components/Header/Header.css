@@ -1,5 +1,16 @@
 .header {
   width: 100%; /* .w-100 */
   background-color: var(--light-purple,mediumpurple); /* .bg-light-purple */
+}
+
+.header h1,
+.header h3 {
+  display: inline-block;
+}
+
+.header h3 {
+  float: right;
+  margin-left: var(--spacing-medium); /* .mh3 */
+  margin-right: var(--spacing-medium);
 
 }

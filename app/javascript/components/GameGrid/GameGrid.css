@@ -1,0 +1,42 @@
+.grid {
+  height: 100%; /* .h-100 */
+  width: 100%; /* .w-100 */
+  padding: var(--spacing-none, 0); /* .pa0 */
+  margin: var(--spacing-none, 0); /* .ma0 */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-areas: "player1 summary player2" "player1 main player2" "player3 main player4" "player3 messages player4";
+}
+
+.region {
+  padding: var(--spacing-small, 0.5rem); /* .pa2 */
+}
+
+.player1 {
+  grid-area: player1;
+}
+
+.player2 {
+  grid-area: player2;
+}
+
+.player3 {
+  grid-area: player3;
+}
+
+.player4 {
+  grid-area: player4;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.messages {
+  grid-area: messages;
+}
+
+.main {
+  grid-area: main;
+}

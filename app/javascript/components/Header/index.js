@@ -14,6 +14,8 @@ class Header extends React.Component {
     return (
       <header className={classNames} >
         <Link to="/"><h1>GameStock</h1></Link>
+        <Link to="/about"><h3>About</h3></Link>
+        <Link to="/oops"><h3>Error!</h3></Link>
       </header>
     )
   }
