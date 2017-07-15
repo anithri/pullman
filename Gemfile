@@ -46,6 +46,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-bundler'
   gem 'guard-livereload'
+  gem 'annotate'
 
   gem 'foreman'
 end
