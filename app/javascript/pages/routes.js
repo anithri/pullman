@@ -11,7 +11,7 @@ class PageRoutes extends React.Component {
   render () {
     return (
       <ConnectedRouter history={this.props.history}>
-        <div className="max">
+        <div className="max bodyBackground">
           <Switch>
             <Route path="/" exact component={GamePage}/>
             <Route path="/home" exact component={HomePage}/>

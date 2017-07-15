@@ -5,6 +5,7 @@ import {Helmet} from 'react-helmet';
 import createStore, {APP_HISTORY} from 'store'
 import initialState from 'store/initial_state.json'
 import PageRoutes from 'pages/routes'
+
 import styles from './App.css'
 
 const store = createStore(initialState)

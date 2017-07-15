@@ -17,6 +17,7 @@
  *= require '_variables.css'
  *= require '_typography.css'
  *= require '_skins.css'
+ *= require '_background.css'
  *= require_self
  */
 
@@ -31,6 +32,5 @@ body,
 }
 
 #appContainer {
-    background-color: var(--bg-body-color,#f0f0f0);
 }
 

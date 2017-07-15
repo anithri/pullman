@@ -29,8 +29,8 @@ end
 
 guard 'livereload' do
   extensions = {
-    css: :css,
-    js: :js,
+    # css: :css,
+    # js: :js,
     html: :html,
     png: :png,
     gif: :gif,

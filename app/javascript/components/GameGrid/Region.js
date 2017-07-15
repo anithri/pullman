@@ -4,12 +4,13 @@ import cx from 'classnames'
 import styles from './GameGrid.css'
 import PropTypes from 'prop-types'
 
+
 const propTypes = {
   className: PropTypes.string,
   gridRegion: PropTypes.string
 }
 
-function addRegion (region) {
+export function addRegion (region) {
   return compose(
     mapProps((props) => {
       const newNames = cx(
@@ -25,4 +26,26 @@ function addRegion (region) {
   )
 }
 
-export default addRegion
+export const addPlayerRegion = compose(
+    mapProps((props) => {
+      const newNames = cx(
+        styles.region,
+        styles[props.id],
+        props.className
+      )
+      return {
+        ...props,
+        className: newNames
+      }
+    })
+  )
+
+
+
+const myExports = {
+  addRegion,
+  addPlayerRegion
+}
+
+
+export default myExports

@@ -1,36 +1,36 @@
 import React from 'react'
 import cx from 'classnames'
-import GameGrid, {addRegion} from 'components/GameGrid'
+import GameGrid, {addRegion, addPlayerRegion} from 'components/GameGrid'
 
 import styles from './Game.css'
 
 import OrigGame from 'screens/Game'
-import OrigGameMessages from 'screens/Game/Messages'
-import OrigGamePlayer from 'screens/Game/Player'
-import OrigGameSummary from 'screens/Game/Summary'
-
-const GameMessages = addRegion('messages')(OrigGameMessages)
-const GamePlayer1 = addRegion('player1')(OrigGamePlayer)
-const GamePlayer2 = addRegion('player2')(OrigGamePlayer)
-const GamePlayer3 = addRegion('player3')(OrigGamePlayer)
-const GamePlayer4 = addRegion('player4')(OrigGamePlayer)
-const GameSummary = addRegion('summary')(OrigGameSummary)
 const Game = addRegion('main')(OrigGame)
 
-class HomePage extends React.Component {
+import OrigGameMessages from 'screens/Game/Messages'
+const GameMessages = addRegion('messages')(OrigGameMessages)
+
+import OrigGamePlayer from 'screens/Game/Player'
+import PlayerContainer from 'containers/Player'
+const GamePlayer = PlayerContainer(addPlayerRegion(OrigGamePlayer))
+
+const GameSummary = addRegion('summary')(OrigGameSummary)
+import OrigGameSummary from 'screens/Game/Summary'
+
+class GamePage extends React.Component {
   render () {
     return (
       <GameGrid className={styles.game}>
-        <GameMessages />
-        <GamePlayer1 playerId={1} />
-        <GamePlayer2 playerId={2} />
-        <GamePlayer3 playerId={3} />
-        <GamePlayer4 playerId={4} />
+        <GamePlayer playerId={1} />
+        <GamePlayer playerId={2} />
+        <GamePlayer playerId={3} />
+        <GamePlayer playerId={4} />
         <GameSummary />
         <Game />
+        <GameMessages />
       </GameGrid>
     )
   }
 }
 
-export default HomePage
+export default GamePage
