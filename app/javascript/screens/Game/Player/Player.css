@@ -1,3 +1,29 @@
 .player {
 
 }
+
+.name {
+  width: 100%; /* .w-100 */
+  line-height: var(--line-height-title); /* .lh-title */
+  font-size: var(--font-size-3); /* .f3 */
+  color: var(--near-white); /* .near-white */
+  background-color: var(--purple); /* .bg-purple */
+  text-align: center; /* .tc */
+}
+
+.order-0 h3 {
+  background-color: var(--dark-green);
+}
+
+.order-1 h3 {
+  background-color: var(--yellow);
+  color: var(--near-black);
+}
+
+.order-2 h3 {
+  background-color: var(--light-purple);
+  color: var(--near-black);
+}
+.order-3 h3 {
+  background-color: var(--purple);
+}

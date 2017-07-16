@@ -8,11 +8,10 @@
   grid-gap: var(--spacing-extra-small);
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 2fr 2fr 1fr;
-  grid-template-areas: "player-1 summary player-2" "player-1 main player-2" "player-3 main player-4" "player-3 messages player-4";
+  grid-template-areas: "player-1 summary player-2" "player-1 main player-2" "player-4 main player-3" "player-4 messages player-3";
 }
 
 .region {
-  padding: var(--spacing-small, 0.5rem); /* .pa2 */
   border-radius: var(--border-radius-3); /* .br3 */
   border-style: solid; /* .ba */
   border-width: 1px;

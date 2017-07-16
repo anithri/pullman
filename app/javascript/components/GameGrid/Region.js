@@ -13,14 +13,13 @@ const propTypes = {
 export function addRegion (region) {
   return compose(
     mapProps((props) => {
-      const newNames = cx(
+      const className = cx(
         styles.region,
         styles[region],
         props.className
       )
       return {
-        ...props,
-        className: newNames
+        className
       }
     })
   )

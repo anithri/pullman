@@ -1,12 +1,29 @@
-import { createSelector }  from 'reselect'
+import {createSelector} from 'reselect'
+
+const sortByOrder = (a, b) => {
+  if (a.order < b.order) {
+    return -1
+  }
+  if (a.order > b.order) {
+    return 1
+  }
+  return 0
+}
+
+export const playerOrder = state => state.players.turnOrder
 
 export const allPlayers = state => state.players.all
-export const currentPlayerId = state => state.players.current
+
+export const currentPlayerId = state => state.players.turnOrder[0]
+
 export const playersById = createSelector(
-  [allPlayers],
-  (playerArr) => {
+  [allPlayers, playerOrder],
+  (playerArr, currentOrder) => {
     const out = {}
-    playerArr.forEach(player => out[player.id] = player)
+    playerArr.forEach(player => {
+      out[player.id] = player
+      out[player.id]['order'] = currentOrder.indexOf(player.id)
+    })
     return out
   }
 )
@@ -16,10 +33,15 @@ export const currentPlayer = createSelector(
   (players, id) => players[id]
 )
 
-export function playerById(playerId) {
+
+export const playerById = (playerId) => {
   return createSelector(
     [playersById],
-    players => players[playerId]
+    (players) => {
+      return {
+        ...players[playerId]
+      }
+    }
   )
 }
 
