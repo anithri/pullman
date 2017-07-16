@@ -1,33 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
+import {compose, setPropTypes} from 'recompose'
 
 const propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+  className: PropTypes.string
 }
 
-class <%= pascalEntityName %> extends Component {
-  render() {
-    return (
-      <div></div>
-    );
+const mapStateToProps = (state, props) => {
+  return {
+    className: props.className
   }
 }
 
-const mapStateToProps = (state) => {
+const mapDispatchToProps = (dispatch, props) => {
   return {}
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {}
-}
+const <%= camelEntityName %>Container = compose(
+    connect(
+      mapStateToProps,
+      mapDispatchToProps
+    ),
+    setPropTypes(propTypes)
+)
 
-<%= pascalEntityName %>.propTypes = propTypes;
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(<%= pascalEntityName %>);
+export default <%= camelEntityName %>Container

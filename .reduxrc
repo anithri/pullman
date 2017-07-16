@@ -4,5 +4,5 @@
   "smartPath": "containers",
   "dumbPath": "components",
   "screenPath": "screens",
-  "fileCasing": "pascal"
+  "fileCasing": "default"
 }
