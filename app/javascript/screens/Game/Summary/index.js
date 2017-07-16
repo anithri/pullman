@@ -5,7 +5,8 @@ import cx from 'classnames'
 import styles from './Summary'
 
 const propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  phaseText: PropTypes.string.isRequired
 }
 
 class Summary extends React.Component {
@@ -16,7 +17,7 @@ class Summary extends React.Component {
     )
     return (
       <div className={myClasses}>
-        <h3>Summary</h3>
+        <h3>{this.props.phaseText}</h3>
       </div>
     )
   }

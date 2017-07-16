@@ -3,11 +3,13 @@ import { routerReducer} from 'react-router-redux'
 
 import appReducer from 'store/app/reducers'
 import playerReducer from 'store/player/reducers'
+import summaryReducer from 'store/summary/reducers'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     app: appReducer,
     players: playerReducer,
+    summary: summaryReducer,
     router: routerReducer,
     ...asyncReducers
   })
