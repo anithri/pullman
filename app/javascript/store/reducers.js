@@ -5,6 +5,7 @@ import appReducer from 'store/app/reducers'
 import playerReducer from 'store/player/reducers'
 import gameReducer from 'store/game/reducers'
 import summaryReducer from 'store/summary/reducers'
+import messagesReducer from 'store/messages/reducers'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
@@ -12,6 +13,7 @@ export const makeRootReducer = (asyncReducers) => {
     players: playerReducer,
     game: gameReducer,
     summary: summaryReducer,
+    messages: messagesReducer,
     router: routerReducer,
     ...asyncReducers
   })

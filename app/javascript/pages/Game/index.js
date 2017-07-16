@@ -9,7 +9,8 @@ import gameContainer from 'store/game/container'
 const Game = gameContainer(addRegion('main')(OrigGame))
 
 import OrigGameMessages from 'screens/Game/Messages'
-const GameMessages = addRegion('messages')(OrigGameMessages)
+import messagesContainer from 'store/messages/container'
+const GameMessages = messagesContainer(addRegion('messages')(OrigGameMessages))
 
 import OrigGamePlayer from 'screens/Game/Player'
 import playerContainer from 'store/player/container'

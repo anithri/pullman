@@ -5,7 +5,11 @@ import cx from 'classnames'
 import styles from './Messages'
 
 const propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  messages: PropTypes.arrayOf(
+    PropTypes.string.isRequired
+  ).isRequired
+
 }
 
 class Messages extends React.Component {
@@ -14,9 +18,12 @@ class Messages extends React.Component {
         this.props.className,
         styles.messages
     )
+    const list = this.props.messages.map((msg,idx) => (<li key={idx}>{msg}</li>))
     return (
       <div className={myClasses}>
-        <h3>Messages</h3>
+        <ul>
+          {list}
+        </ul>
       </div>
     )
   }
