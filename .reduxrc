@@ -1,7 +1,7 @@
 {
   "sourceBase": "app/javascript",
   "testBase": "test/javascript",
-  "smartPath": "containers",
+  "smartPath": "store",
   "dumbPath": "components",
   "screenPath": "screens",
   "fileCasing": "default"
