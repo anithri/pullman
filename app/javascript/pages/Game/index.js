@@ -11,11 +11,11 @@ import OrigGameMessages from 'screens/Game/Messages'
 const GameMessages = addRegion('messages')(OrigGameMessages)
 
 import OrigGamePlayer from 'screens/Game/Player'
-import playerContainer from 'containers/player'
+import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(addPlayerRegion(OrigGamePlayer))
 
 import OrigGameSummary from 'screens/Game/Summary'
-import summaryContainer from 'containers/summary'
+import summaryContainer from 'store/summary/container'
 const GameSummary = summaryContainer(addRegion('summary')(OrigGameSummary))
 
 class GamePage extends React.Component {
