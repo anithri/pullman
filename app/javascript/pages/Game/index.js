@@ -5,7 +5,8 @@ import GameGrid, {addRegion, addPlayerRegion} from 'components/GameGrid'
 import styles from './Game.css'
 
 import OrigGame from 'screens/Game'
-const Game = addRegion('main')(OrigGame)
+import gameContainer from 'store/game/container'
+const Game = gameContainer(addRegion('main')(OrigGame))
 
 import OrigGameMessages from 'screens/Game/Messages'
 const GameMessages = addRegion('messages')(OrigGameMessages)

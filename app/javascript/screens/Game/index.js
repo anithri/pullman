@@ -5,7 +5,8 @@ import cx from 'classnames'
 import styles from './Game'
 
 const propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  phase: PropTypes.string
 }
 
 class Game extends React.Component {
@@ -16,7 +17,7 @@ class Game extends React.Component {
     )
     return (
       <div className={myClasses}>
-        <h3>Main</h3>
+        <h3>{this.props.phase}</h3>
       </div>
     )
   }
