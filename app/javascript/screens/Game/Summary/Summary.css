@@ -1,3 +1,14 @@
 .summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'phase score';
+}
 
+.phase {
+  grid-area: phase;
+}
+
+.score {
+  grid-area: score;
+  text-align: right;
 }

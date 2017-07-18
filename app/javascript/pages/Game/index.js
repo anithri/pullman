@@ -17,8 +17,7 @@ import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(addPlayerRegion(OrigGamePlayer))
 
 import OrigGameSummary from 'screens/Game/Summary'
-import summaryContainer from 'store/summary/container'
-const GameSummary = summaryContainer(addRegion('summary')(OrigGameSummary))
+const GameSummary = addRegion('summary')(OrigGameSummary)
 
 class GamePage extends React.Component {
   render () {

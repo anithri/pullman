@@ -2,27 +2,26 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {compose, setPropTypes} from 'recompose'
-
-import {gameActions} from 'store/game/reducers'
+import phaseData, {phaseDataShape} from './phaseData'
 
 const propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  ...phaseDataShape
 }
 
 const mapStateToProps = (state, props) => {
+  console.log('phaseContainer',props, state, phaseData)
   return {
-    className: props.className,
-    ...state.game
+    ...props,
+    ...phaseData[props.id]
   }
 }
 
 const mapDispatchToProps = (dispatch, props) => {
-  return {
-    changePhase: (e) => dispatch(gameActions.changePhase('Starting'))
-  }
+  return {}
 }
 
-const gameContainer = compose(
+const phaseContainer = compose(
     connect(
       mapStateToProps,
       mapDispatchToProps
@@ -30,4 +29,4 @@ const gameContainer = compose(
     setPropTypes(propTypes)
 )
 
-export default gameContainer
+export default phaseContainer

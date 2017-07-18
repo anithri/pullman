@@ -1,21 +1,27 @@
 .grid {
   height: 100%; /* .h-100 */
   width: 100%; /* .w-100 */
-  padding: var(--spacing-extra-small); /* .pa1 */
+  padding: var(--spacing-extra-small, 0.25rem); /* .pa1 */
 
   margin: var(--spacing-none, 0); /* .ma0 */
   display: grid;
-  grid-gap: var(--spacing-extra-small);
+  grid-gap: var(--spacing-extra-small, 0.25rem);
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 2fr 1fr;
-  grid-template-areas: "player-1 summary player-2" "player-1 main player-2" "player-4 main player-3" "player-4 messages player-3";
+  grid-template-rows: 1fr 1fr auto auto 1fr 1fr;
+  grid-template-areas:
+          "player-1 summary player-2"
+          "player-1 main player-2"
+          "player-1 main player-2"
+          "player-4 main player-3"
+          "player-4 main player-3"
+          "player-4 messages player-3";
 }
 
 .region {
-  border-radius: var(--border-radius-3); /* .br3 */
+  border-radius: var(--border-radius-3, 3px); /* .br3 */
   border-style: solid; /* .ba */
   border-width: 1px;
-  background-color: var(--white-80);
+  background-color: var(--white-80, white);
 }
 
 .player-1 {

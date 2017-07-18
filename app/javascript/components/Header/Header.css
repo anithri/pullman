@@ -10,7 +10,7 @@
 
 .header h3 {
   float: right;
-  margin-left: var(--spacing-medium); /* .mh3 */
-  margin-right: var(--spacing-medium);
+  margin-left: var(--spacing-medium, 1rem); /* .mh3 */
+  margin-right: var(--spacing-medium, 1rem);
 
 }

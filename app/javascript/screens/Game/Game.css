@@ -1,3 +1,50 @@
 .game {
+  width: 100%; /* .w-100 */
+  height: 100%; /* .h-100 */
+
+  background-color: var(--dark-pink); /* .bg-dark-pink */
+}
+
+h3,
+.action {
+  margin: var(--spacing-extra-small); /* .ma2 */
+  padding: var(--spacing-extra-small); /* .pa3 */
+  border-style: solid; /* .ba */
+  border-width: 3px;
+}
+
+.group {
+  border-style: solid; /* .ba */
+  border-width: 1px;
+}
+
+.inBox {
+  background-color: var(--gray); /* .bg-gray */
+}
+
+.setup {
+  background-color: var(--washed-yellow); /* .bg-washed-yellow */
+}
+
+.main {
+  background-color: var(--washed-blue); /* .bg-washed-blue */
+}
+
+.round {
+  background-color: var(--washed-red); /* .bg-washed-red */
+}
+
+.turn {
+  background-color: var(--light-pink); /* .bg-light-pink */
 
 }
+
+.player {
+  background-color: var(--washed-green); /* .bg-washed-green */
+}
+
+.playerAction {
+  background-color: var(--light-purple); /* .bg-light-purple */
+}
+
+

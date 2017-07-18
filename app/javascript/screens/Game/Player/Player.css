@@ -4,26 +4,26 @@
 
 .name {
   width: 100%; /* .w-100 */
-  line-height: var(--line-height-title); /* .lh-title */
-  font-size: var(--font-size-3); /* .f3 */
-  color: var(--near-white); /* .near-white */
-  background-color: var(--purple); /* .bg-purple */
+  line-height: var(--line-height-title, 1.0); /* .lh-title */
+  font-size: var(--font-size-3, 2rem); /* .f3 */
+  color: var(--near-white, #f0f0f0); /* .near-white */
+  background-color: var(--purple,purple); /* .bg-purple */
   text-align: center; /* .tc */
 }
 
 .order-0 h3 {
-  background-color: var(--dark-green);
+  background-color: var(--dark-green,darkgreen);
 }
 
 .order-1 h3 {
-  background-color: var(--yellow);
-  color: var(--near-black);
+  background-color: var(--yellow,yellow);
+  color: var(--near-black,#0f0f0f);
 }
 
 .order-2 h3 {
-  background-color: var(--light-purple);
-  color: var(--near-black);
+  background-color: var(--light-purple,magenta);
+  color: var(--near-black,#0f0f0f);
 }
 .order-3 h3 {
-  background-color: var(--purple);
+  background-color: var(--purple,purple);
 }
