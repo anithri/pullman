@@ -3,13 +3,10 @@ import {ConnectedRouter} from 'react-router-redux'
 import {Route, Switch, Redirect, withRouter} from 'react-router'
 
 import GameInBox from 'pages/Game/InBox'
+import GameAtStart from 'pages/Game/AtStart'
 
-const GameAtStart = (props) => <div>GameAtStart</div>
 const RoundAtStart = (props) => <div>RoundAtStart</div>
-const TurnAtStart = (props) => {
-  console.log(props);
-  return (<div>TurnAtStart</div>)
-}
+const TurnAtStart = (props) => <div>TurnAtStart</div>
 const Action = (props) => <div>Action</div>
 const TurnAtEnd = (props) => <div>TurnAtEnd</div>
 const RoundAtEnd = (props) => <div>RoundAtEnd</div>

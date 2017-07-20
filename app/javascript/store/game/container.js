@@ -17,7 +17,7 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    startGame: (e) => {
+    startGame: () => {
       dispatch(gameActions.startGame())
     }
   }

@@ -6,6 +6,7 @@ export const constants = {
 // Action Creators
 
 const addMessage = (newMessage) => {
+  console.log(newMessage, MESSAGE_ADDED)
   return {
     type: MESSAGE_ADDED,
     newMessage

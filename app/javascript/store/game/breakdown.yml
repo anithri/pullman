@@ -7,7 +7,6 @@ GameInBox:
 GameAtStart:
   path: game
   signals:
-  - init_game
   - quit_game
   - start_round
 RoundAtStart:

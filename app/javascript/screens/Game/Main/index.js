@@ -2,28 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import styles from './Game'
-import {constants as phaseConstants} from 'store/phases/phaseData'
-const GAME_LOOP = phaseConstants.GAME_LOOP
-import origPhase from 'store/phases/Phase'
-import phaseContainer from 'store/phases/container'
-const Phase = phaseContainer(origPhase)
+import styles from '../Game.css'
 
 const propTypes = {
   className: PropTypes.string,
-  phase: PropTypes.string,
 }
 
 
 class Game extends React.Component {
   render () {
-    console.log('GAME',phaseConstants)
     const myClasses = cx(
       this.props.className,
-      styles.game
     )
     return (
-      <Phase id={GAME_LOOP} className={myClasses}/>
+      <div className={myClasses}>
+        <h3>Game Main</h3>
+      </div>
+
     )
   }
 }

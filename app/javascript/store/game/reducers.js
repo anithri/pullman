@@ -12,15 +12,26 @@ export const constants = {
 
 const startGame = () => {
   return (dispatch) => {
+    dispatch({
+      type: START_GAME
+    })
     dispatch(messageActions.addMessage("Game is Started"))
+    // InitGame here
     dispatch(push('/game/start'))
   }
 }
 
+// const quitGame = () => {
+//   return (dispatch) => {
+//     dispatch(messageActions.addMessage('QuitGame'))
+//     // destroyGame here
+//     // dispatch(push('/game'))
+//   }
+// }
+
 // Action Creators
 export const actions = {
-  startGame
-
+  startGame,
 }
 
 // Reducer
@@ -28,6 +39,7 @@ export const defaultState = {
 }
 
 export default function (state = defaultState, action) {
+  console.log('game reducer',action)
   switch (action.type) {
     default:
       return state
