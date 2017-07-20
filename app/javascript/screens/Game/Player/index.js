@@ -5,8 +5,6 @@ import cx from 'classnames'
 import styles from './Player'
 
 const propTypes = {
-  className: PropTypes.string,
-  playerId: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   order: PropTypes.number.isRequired

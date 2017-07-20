@@ -6,15 +6,13 @@ import {compose, setPropTypes} from 'recompose'
 import {playerById} from 'store/player/selectors'
 
 const propTypes = {
-  playerId: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   className: PropTypes.string
 }
 
 const mapStateToProps = (state, props) => {
-  const playerId = `player-${props.playerId}`
-  const player = playerById(playerId)(state)
+  const player = playerById(props.id)(state)
   return {
-    playerId,
     ...player,
     className: props.className
   }

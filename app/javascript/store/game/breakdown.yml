@@ -1,0 +1,44 @@
+---
+GameInBox:
+  path: '/'
+  signals:
+  - start_game
+  - quit_game
+GameAtStart:
+  path: game
+  signals:
+  - init_game
+  - quit_game
+  - start_round
+RoundAtStart:
+  path: game/round/:roundid
+  signals:
+  - end_round
+  - quit_game
+  - start_turn
+TurnAtStart:
+  path: game/round/:roundid/turn/:turnid/:playerid
+  signals:
+  - start_action
+  - end_turn
+  - reset_turn
+  - quit_game
+Action:
+  path: game/round/:roundid/turn/:turnid/:playerid/action
+  signals:
+  - do_action
+  - end_action
+TurnAtEnd:
+  path: game/round/:roundid/turn/:turnid/final
+  signals:
+  - reset_turn
+  - quit_game
+RoundAtEnd:
+  path: game/round/:roundid/final
+  signals:
+  - reset_round
+  - end_game
+GameAtEnd:
+  path: game/final
+  signals:
+  - quit_game

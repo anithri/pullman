@@ -1,38 +1,23 @@
 import React from 'react'
-import cx from 'classnames'
-import GameGrid, {addRegion, addPlayerRegion} from 'components/GameGrid'
 
 import styles from './Game.css'
-
-import OrigGame from 'screens/Game'
-import gameContainer from 'store/game/container'
-const Game = gameContainer(addRegion('main')(OrigGame))
-
-import OrigGameMessages from 'screens/Game/Messages'
-import messagesContainer from 'store/messages/container'
-const GameMessages = messagesContainer(addRegion('messages')(OrigGameMessages))
-
-import OrigGamePlayer from 'screens/Game/Player'
-import playerContainer from 'store/player/container'
-const GamePlayer = playerContainer(addPlayerRegion(OrigGamePlayer))
-
-import OrigGameSummary from 'screens/Game/Summary'
-const GameSummary = addRegion('summary')(OrigGameSummary)
+import GameRoutes from './routes'
 
 class GamePage extends React.Component {
   render () {
     return (
-      <GameGrid className={styles.game}>
-        <GamePlayer playerId={1} />
-        <GamePlayer playerId={2} />
-        <GamePlayer playerId={3} />
-        <GamePlayer playerId={4} />
-        <GameSummary />
-        <Game />
-        <GameMessages />
-      </GameGrid>
+      <GameRoutes />
     )
   }
 }
 
+{/*<GameGrid className={styles.game}>*/}
+{/*<GamePlayer playerId={1} />*/}
+{/*<GamePlayer playerId={2} />*/}
+{/*<GamePlayer playerId={3} />*/}
+{/*<GamePlayer playerId={4} />*/}
+{/*<GameSummary />*/}
+{/*<Game />*/}
+{/*<GameMessages />*/}
 export default GamePage
+

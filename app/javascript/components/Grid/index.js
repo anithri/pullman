@@ -1,31 +1,52 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import {mapProps, compose} from 'recompose'
 import cx from 'classnames'
-import styles from './Grid.css'
-import addRegion from './Region'
+import defaultGrid from './defaultGrid.css'
 
-const propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired
+import addClassName from 'utils/addClassName'
+
+
+export function addGrid (styles = defaultGrid, grid = 'default', gridClass = 'grid') {
+  return addClassName(cx(
+    styles[grid],
+    styles[gridClass]
+  ))
 }
 
-class Grid extends React.Component {
-  render () {
-    const classNames = cx(
-      styles[this.props.layout],
-      styles.grid, this.props.className
-    )
+export function addRegion (styles = defaultGrid, region, regionClass = 'region') {
+  return addClassName(cx(
+    styles[regionClass],
+    styles[region]
+  ))
+}
 
-    return (
-      <div className={classNames} >
-        {this.props.children}
-      </div>
-    )
+export function addRegionVia (styles = defaultGrid, regionProp, regionWrapper = 'region') {
+  return compose(
+    mapProps((props) => {
+      const className = cx(
+        styles[regionWrapper],
+        styles[props[regionProp]],
+        props.className
+      )
+      return {
+        ...props,
+        className
+      }
+    })
+  )
+}
+
+
+export function makeGrid (styles, grid = 'default',
+                          gridWrapper = 'grid', regionWrapper = 'region') {
+  return {
+    addGrid: addGrid(styles, grid, gridWrapper),
+    addRegion: (region) => {
+      return addRegion(styles, region, regionWrapper)
+    },
+    calcRegion: (regionProp, extraClasses = '') => {
+      return addRegionVia(styles, regionProp, regionWrapper)
+    }
   }
 }
-Grid.propTypes = propTypes
 
-export default Grid
-export {
-  addRegion
-}
+export default makeGrid

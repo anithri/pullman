@@ -1,5 +1,5 @@
 import React from 'react'
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 import {Helmet} from 'react-helmet';
 
 import createStore, {APP_HISTORY} from 'store'
@@ -20,7 +20,7 @@ class App extends React.Component {
             <title>{initialState.app.title}</title>
             <link rel="canonical" href="http://mysite.com/example"/>
           </Helmet>
-            <PageRoutes history={APP_HISTORY}/>
+          <PageRoutes history={APP_HISTORY}/>
         </div>
       </Provider>
     )

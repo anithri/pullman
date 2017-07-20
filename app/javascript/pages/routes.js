@@ -1,6 +1,6 @@
 import React from 'react'
 import {ConnectedRouter} from 'react-router-redux'
-import {Route, Switch} from 'react-router'
+import {Route, Switch, Redirect} from 'react-router'
 
 import HomePage from 'pages/Home'
 import AboutPage from 'pages/About'
@@ -11,15 +11,13 @@ class PageRoutes extends React.Component {
   render () {
     return (
       <ConnectedRouter history={this.props.history}>
-        <div className="max bodyBackground">
-          <Switch>
-            <Route path="/" exact component={GamePage}/>
-            <Route path="/home" exact component={HomePage}/>
-            <Route path="/game" exact component={GamePage} />
-            <Route path="/about" exact component={AboutPage}/>
-            <Route component={ErrorPage}/>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact component={GamePage}/>
+          <Route path="/home" exact component={HomePage}/>
+          <Route path="/game" component={GamePage}/>
+          <Route path="/about" exact component={AboutPage}/>
+          <Route component={ErrorPage}/>
+        </Switch>
       </ConnectedRouter>
     )
   }

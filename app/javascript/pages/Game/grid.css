@@ -6,15 +6,19 @@
   margin: var(--spacing-none, 0); /* .ma0 */
   display: grid;
   grid-gap: var(--spacing-extra-small, 0.25rem);
+}
+
+.default {
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr auto auto 1fr 1fr;
-  grid-template-areas:
-          "player-1 summary player-2"
-          "player-1 main player-2"
-          "player-1 main player-2"
-          "player-4 main player-3"
-          "player-4 main player-3"
-          "player-4 messages player-3";
+  grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
+  grid-template-areas: "alpha summary beta" "alpha main beta" "alpha main beta" "delta main gamma" "delta main gamma" "delta messages gamma";
+
+}
+
+.heroGrid {
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "alpha main beta" "delta main gamma";
 }
 
 .region {
@@ -24,20 +28,20 @@
   background-color: var(--white-80, white);
 }
 
-.player-1 {
-  grid-area: player-1;
+.alpha {
+  grid-area: alpha;
 }
 
-.player-2 {
-  grid-area: player-2;
+.beta {
+  grid-area: beta;
 }
 
-.player-3 {
-  grid-area: player-3;
+.gamma {
+  grid-area: gamma;
 }
 
-.player-4 {
-  grid-area: player-4;
+.delta {
+  grid-area: delta;
 }
 
 .summary {
@@ -46,8 +50,10 @@
 
 .messages {
   grid-area: messages;
+  overflow-y: scroll;
 }
 
 .main {
   grid-area: main;
+  overflow-y: scroll;
 }

@@ -17,26 +17,22 @@ export const actions = {
 // Reducer
 export const defaultState = {
   current: 'player-1',
-  turnOrder: ['player-1', 'player-2', 'player-3', 'player-4'],
+  turnOrder: ['alpha', 'beta', 'gamma', 'delta'],
   all: [
     {
-      playerId: 1,
-      id: 'player-1',
+      id: 'alpha',
       name: 'Warlord'
     },
     {
-      playerId: 2,
-      id: 'player-2',
+      id: 'beta',
       name: 'Arch Mage'
     },
     {
-      playerId: 3,
-      id: 'player-3',
+      id: 'gamma',
       name: 'Hierarch'
     },
     {
-      playerId: 4,
-      id: 'player-4',
+      id: 'delta',
       name: 'Bandit King'
     }
   ]
