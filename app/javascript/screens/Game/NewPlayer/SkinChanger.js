@@ -3,7 +3,7 @@ import {skins} from 'utils/skins'
 import styles from './NewPlayer'
 
 const SkinOption = (props) => {
-  const inUse = (props.inUse.indexOf(props.skin) > 0) ? 'disabled' : false
+  const inUse = (props.inUse.indexOf(props.skin) !== -1) ? 'disabled' : false
   const {skin} = props
   const className = inUse ? 'skin-disabled' : `highlight-${skin}`
   const label = skin.split('-').map(w => `${w[0].toUpperCase()}${w.slice(1)}`).join(' ')

@@ -4,11 +4,14 @@ import { routerMiddleware } from 'react-router-redux'
 
 import createHistory from 'history/createBrowserHistory'
 import makeRootReducer from 'store/reducers'
+import makeRootSaga from 'store/sagas'
 
 export const APP_HISTORY = createHistory()
 
 export default (initialState = {}) => {
-  const middleware = [apiMiddleware,routerMiddleware(APP_HISTORY)]
+  const rootSaga = makeRootSaga()
+
+  const middleware = [rootSaga.middleware,apiMiddleware,routerMiddleware(APP_HISTORY)]
 
   const enhancers = []
 
@@ -30,5 +33,7 @@ export default (initialState = {}) => {
       store.replaceReducer(reducers(store.asyncReducers))
     })
   }
+
+  rootSaga.run()
   return store
 }
