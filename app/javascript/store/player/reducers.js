@@ -3,9 +3,9 @@ import {getPlayersFor} from './defaults'
 const DEFAULT_PLAYER_IDS = ['alpha', 'beta', 'gamma', 'delta']
 
 // Constants
-const PLAYER_NAME_CHANGED = 'card/player/name/changed'
-const PLAYER_SKIN_CHANGED = 'card/player/skin/changed'
-const PLAYER_READY_CHANGED = 'card/player/ready/changed'
+const PLAYER_NAME_CHANGED = 'cards/player/name/changed'
+const PLAYER_SKIN_CHANGED = 'cards/player/skin/changed'
+const PLAYER_READY_CHANGED = 'cards/player/ready/changed'
 
 export const constants = {
   PLAYER_NAME_CHANGED,

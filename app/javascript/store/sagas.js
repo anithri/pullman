@@ -4,11 +4,13 @@ import "regenerator-runtime/runtime"
 
 import playerSaga from 'store/player/sagas'
 import gameSaga from 'store/game/sagas'
+import messagesSaga from 'store/messages/sagas'
 
 function* rootSaga() {
   yield all([
     playerSaga(),
-    gameSaga()
+    gameSaga(),
+    messagesSaga()
   ])
 }
 

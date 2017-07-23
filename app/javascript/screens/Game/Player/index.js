@@ -7,20 +7,23 @@ import styles from './Player'
 const propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  order: PropTypes.number.isRequired
+  skin: PropTypes.string.isRequired
 }
 
 class Player extends React.Component {
-  render() {
-    const {className, id, name, order} = this.props
+  render () {
+    const {className, id, name, skin} = this.props
     const myClasses = cx(
-        className,
+      className,
       styles.player,
-      styles[id]
+      styles[id],
+      `card-${skin}`
     )
     return (
       <div className={myClasses}>
-        <h3 className={styles.name}>{name}</h3>
+        <header>
+          <h3>{name}</h3>
+        </header>
       </div>
     )
   }

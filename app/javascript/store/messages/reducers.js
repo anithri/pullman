@@ -1,9 +1,12 @@
 // Constants
+
 const MESSAGE_ADDED = 'cards/messages/message_added'
 export const constants = {
   MESSAGE_ADDED
 }
 // Action Creators
+
+
 
 const addMessage = (newMessage) => {
   return {

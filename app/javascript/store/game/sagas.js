@@ -1,13 +1,15 @@
 import { delay } from 'redux-saga'
 import { put, takeEvery, all } from 'redux-saga/effects'
 import {constants as gameConstants} from './reducers'
+import { push } from 'react-router-redux'
 
 export function* helloSaga() {
-  console.log('Hello Player Sagas!')
+  console.log('Hello Game Sagas!')
 }
 
 function* gameStartSaga(action) {
   console.log('gameStartSaga',action)
+  yield put(push('/game/start'))
 }
 
 function* watchGameStart() {

@@ -13,9 +13,10 @@ class Header extends React.Component {
     const classNames = cx(styles.header, this.props.className)
     return (
       <header className={classNames} >
-        <Link to="/"><h1>GameStock</h1></Link>
-        <Link to="/about"><h3>About</h3></Link>
-        <Link to="/oops"><h3>Error!</h3></Link>
+        <Link to="/"><h1>[GameStock]</h1></Link>
+        <Link to="/game"><h1>[Game]</h1></Link>
+        <Link to="/about"><h3>[About]</h3></Link>
+        <Link to="/oops"><h3>[Error!]</h3></Link>
       </header>
     )
   }

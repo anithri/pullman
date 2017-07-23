@@ -1,5 +1,4 @@
 import {actions as messageActions} from 'store/messages/reducers'
-import { push } from 'react-router-redux'
 
 // Constants
 

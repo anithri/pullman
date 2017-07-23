@@ -2,31 +2,10 @@
 
 }
 
-.name {
+.player > header > h3 {
   width: 100%; /* .w-100 */
   line-height: var(--line-height-title, 1.0); /* .lh-title */
   font-size: var(--font-size-3, 2rem); /* .f3 */
-  color: var(--near-white, #f0f0f0); /* .near-white */
-  background-color: var(--purple, purple); /* .bg-purple */
   text-align: center; /* .tc */
 }
 
-.alpha h3 {
-  color: var(--near-white, #f0f0f0);
-  background-color: var(--green, green);
-}
-
-.beta h3 {
-  color: var(--near-white, #f0f0f0);
-  background-color: var(--blue, blue);
-}
-
-.gamma h3 {
-  color: var(--near-black, #101010);
-  background-color: var(--light-red, lightcoral);
-}
-
-.delta h3 {
-  color: var(--near-white, #f0f0f0);
-  background-color: var(--purple, purple);
-}
