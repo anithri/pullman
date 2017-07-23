@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import {skins} from 'utils/skins'
 
 const names = ['Chief of the Reach', 'Elder of Darkness',
   'Prime of the Sun', 'Chief of Silver',
@@ -53,17 +54,25 @@ const names = ['Chief of the Reach', 'Elder of Darkness',
 ]
 
 const randomizeNames = (count) => {
-  return _.sampleSize(names,count)
+  return _.sampleSize(names, count)
+}
+
+const randomizeSkins = (count) => {
+  return _.sampleSize(skins, count)
 }
 
 export const getPlayersFor = (idArr) => {
   const allNames = randomizeNames(idArr.length)
-  return idArr.map((id, idx) => {
-    return {
+  const allSkins = randomizeSkins(idArr.length)
+  const players = {}
+  idArr.forEach((id, idx) => {
+    players[id] = {
       id,
-      name: allNames[idx]
+      name: allNames[idx],
+      skin: allSkins[idx]
     }
   })
+  return players
 }
 
 

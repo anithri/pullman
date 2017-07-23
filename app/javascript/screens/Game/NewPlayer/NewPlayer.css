@@ -1,0 +1,44 @@
+.player {
+
+}
+
+.player > header > h3 {
+  width: 100%; /* .w-100 */
+  line-height: var(--line-height-title, 1.0); /* .lh-title */
+  font-size: var(--font-size-3, 2rem); /* .f3 */
+  text-align: center; /* .tc */
+}
+
+.readyButton {
+  height: 100%; /* .h-100 */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+.readyButton button {
+  order: 0;
+  flex: 0 0 auto;
+  align-self: auto;
+}
+
+.clean {
+  background-image: var(--near-white);
+}
+.editing {
+  background-color: var(--washed-yellow);
+}
+.invalid {
+  background-color: var(--washed-red);
+}
+.saving {
+  background-color: var(--washed-yellow);
+}
+.saved {
+  background-color: var(--washed-green);
+}
+

@@ -16,7 +16,7 @@
 }
 
 .heroGrid {
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 2fr 3fr 2fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "alpha main beta" "delta main gamma";
 }

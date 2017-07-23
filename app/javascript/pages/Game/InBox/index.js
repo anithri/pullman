@@ -17,7 +17,7 @@ import OrigGameMessages from 'screens/Game/Messages'
 import messagesContainer from 'store/messages/container'
 const GameMessages = messagesContainer(addRegion('messages')(OrigGameMessages))
 
-import OrigGamePlayer from 'screens/Game/Player'
+import OrigGamePlayer from 'screens/Game/NewPlayer'
 import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(calcRegion('id')(OrigGamePlayer))
 

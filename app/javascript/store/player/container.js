@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {compose, setPropTypes} from 'recompose'
+import {actions as playerActions} from './reducers'
 
-import {playerById} from 'store/player/selectors'
+import {playerById, currentNames, currentSkins} from 'store/player/selectors'
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -12,14 +13,22 @@ const propTypes = {
 
 const mapStateToProps = (state, props) => {
   const player = playerById(props.id)(state)
+  const otherNames = currentNames(state).filter(n => n !== player.name)
+  const otherSkins = currentSkins(state).filter(s => s !== player.skin)
   return {
     ...player,
-    className: props.className
+    otherNames,
+    otherSkins,
+    className: props.className,
+    isNameValid: (name) => otherNames.indexOf(name) < 0
   }
 }
 
 const mapDispatchToProps = (dispatch, props) => {
-  return {}
+  return {
+    doNameChange: (newName) => dispatch(playerActions.changePlayerName(props.id, newName)),
+    doSkinChange: (newSkin) => dispatch(playerActions.changePlayerSkin(props.id, newSkin))
+  }
 }
 
 const playerContainer = compose(
@@ -31,3 +40,4 @@ const playerContainer = compose(
 )
 
 export default playerContainer
+

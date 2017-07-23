@@ -15,7 +15,6 @@ const GameError = (props) => <div>GameError</div>
 
 class GameRoutes extends React.Component {
   render () {
-    console.log('GameRoutes', this.props)
     return (
       <ConnectedRouter history={this.props.history}>
         <Switch>

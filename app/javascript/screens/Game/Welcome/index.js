@@ -5,7 +5,6 @@ class Welcome extends React.Component {
     console.log('handleClick',e)
   }
   render () {
-    console.log('welcome#render',this.props)
     return (
       <div className={this.props.className}>
         <h3>Welcome Screen</h3>

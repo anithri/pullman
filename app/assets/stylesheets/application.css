@@ -17,6 +17,7 @@
  *= require '_variables.css'
  *= require '_typography.css'
  *= require '_skins.css'
+ *= require '_themes.css'
  *= require '_background.css'
  *= require_self
  */

@@ -36,7 +36,6 @@ export const defaultState = {
 }
 
 export default function (state = defaultState, action) {
-  console.log('game reducer',action)
   switch (action.type) {
     case START_GAME:
       return {
