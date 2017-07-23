@@ -16,8 +16,7 @@ class Player extends React.Component {
     const myClasses = cx(
         className,
       styles.player,
-      styles[id],
-      styles[`order-${order}`]
+      styles[id]
     )
     return (
       <div className={myClasses}>

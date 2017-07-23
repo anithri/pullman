@@ -11,13 +11,9 @@ export const constants = {
 
 
 const startGame = () => {
-  return (dispatch) => {
-    dispatch({
-      type: START_GAME
-    })
-    dispatch(messageActions.addMessage("Game is Started"))
-    // InitGame here
-    dispatch(push('/game/start'))
+  return {
+    type: START_GAME,
+    gameStartedAt: new Date().toJSON()
   }
 }
 
@@ -36,11 +32,16 @@ export const actions = {
 
 // Reducer
 export const defaultState = {
+  gameStartedAt: null,
 }
 
 export default function (state = defaultState, action) {
   console.log('game reducer',action)
   switch (action.type) {
+    case START_GAME:
+      return {
+        gameStartedAt: action.gameStartedAt
+      }
     default:
       return state
   }

@@ -1,9 +1,13 @@
+import {getPlayersFor} from './defaults'
+
 // Constants
 const PLAYER_TURN_ENDED = 'card/player/player_turn_ended'
+const DEFAULT_PLAYER_IDS = ['alpha', 'beta', 'gamma', 'delta']
 
 export const constants = {
   PLAYER_TURN_ENDED
 }
+
 // Action Creators
 
 export const endPlayerTurn = () => {
@@ -14,28 +18,12 @@ export const actions = {
   endPlayerTurn
 }
 
+
+
 // Reducer
 export const defaultState = {
-  current: 'player-1',
-  turnOrder: ['alpha', 'beta', 'gamma', 'delta'],
-  all: [
-    {
-      id: 'alpha',
-      name: 'Warlord'
-    },
-    {
-      id: 'beta',
-      name: 'Arch Mage'
-    },
-    {
-      id: 'gamma',
-      name: 'Hierarch'
-    },
-    {
-      id: 'delta',
-      name: 'Bandit King'
-    }
-  ]
+  turnOrder: DEFAULT_PLAYER_IDS,
+  all: getPlayersFor(DEFAULT_PLAYER_IDS)
 }
 
 export default function (state = defaultState, action) {

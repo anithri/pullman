@@ -7,23 +7,26 @@
   line-height: var(--line-height-title, 1.0); /* .lh-title */
   font-size: var(--font-size-3, 2rem); /* .f3 */
   color: var(--near-white, #f0f0f0); /* .near-white */
-  background-color: var(--purple,purple); /* .bg-purple */
+  background-color: var(--purple, purple); /* .bg-purple */
   text-align: center; /* .tc */
 }
 
-.order-0 h3 {
-  background-color: var(--dark-green,darkgreen);
+.alpha h3 {
+  color: var(--near-white, #f0f0f0);
+  background-color: var(--green, green);
 }
 
-.order-1 h3 {
-  background-color: var(--yellow,yellow);
-  color: var(--near-black,#0f0f0f);
+.beta h3 {
+  color: var(--near-white, #f0f0f0);
+  background-color: var(--blue, blue);
 }
 
-.order-2 h3 {
-  background-color: var(--light-purple,magenta);
-  color: var(--near-black,#0f0f0f);
+.gamma h3 {
+  color: var(--near-black, #101010);
+  background-color: var(--light-red, lightcoral);
 }
-.order-3 h3 {
-  background-color: var(--purple,purple);
+
+.delta h3 {
+  color: var(--near-white, #f0f0f0);
+  background-color: var(--purple, purple);
 }
