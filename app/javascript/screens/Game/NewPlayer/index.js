@@ -5,6 +5,7 @@ import cx from 'classnames'
 import styles from './NewPlayer'
 import SkinChanger from './SkinChanger'
 import NameChanger from './NameChanger'
+import ReadyChanger from './ReadyChanger'
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -19,8 +20,8 @@ class NewPlayer extends React.Component {
 
   render () {
     const {
-      className, id, name, skin, otherSkins,
-      doSkinChange, doNameChange, isNameValid
+      className, id, name, skin, isReady, otherSkins,
+      doSkinChange, doNameChange, isNameValid, doReadyChange
     } = this.props
     const myClasses = cx(
       className,
@@ -44,10 +45,9 @@ class NewPlayer extends React.Component {
                      onChange={doSkinChange}
 
         />
+        <ReadyChanger isReady={isReady}
+                      onChange={doReadyChange} />
 
-        <section className={styles.readyButton}>
-          <button>Ready!</button>
-        </section>
       </article>
     )
   }

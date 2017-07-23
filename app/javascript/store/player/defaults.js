@@ -69,7 +69,8 @@ export const getPlayersFor = (idArr) => {
     players[id] = {
       id,
       name: allNames[idx],
-      skin: allSkins[idx]
+      skin: allSkins[idx],
+      isReady: false
     }
   })
   return players

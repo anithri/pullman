@@ -29,16 +29,27 @@
 .clean {
   background-image: var(--near-white);
 }
+
 .editing {
   background-color: var(--washed-yellow);
 }
+
 .invalid {
   background-color: var(--washed-red);
 }
+
 .saving {
   background-color: var(--washed-yellow);
 }
+
 .saved {
   background-color: var(--washed-green);
 }
 
+.ready button {
+  background-color: var(--light-green); /* .light-green */
+}
+
+.notReady button {
+  background-color: var(--light-red); /* .bg-light-red */
+}

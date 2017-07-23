@@ -1,24 +1,19 @@
 import {getPlayersFor} from './defaults'
 
-// Constants
+const DEFAULT_PLAYER_IDS = ['alpha', 'beta', 'gamma', 'delta']
 
+// Constants
 const PLAYER_NAME_CHANGED = 'card/player/name/changed'
 const PLAYER_SKIN_CHANGED = 'card/player/skin/changed'
 const PLAYER_READY_CHANGED = 'card/player/ready/changed'
 
-const PLAYER_TURN_ENDED = 'card/player/player_turn_ended'
-const DEFAULT_PLAYER_IDS = ['alpha', 'beta', 'gamma', 'delta']
-
 export const constants = {
-  PLAYER_TURN_ENDED,
   PLAYER_NAME_CHANGED,
   PLAYER_SKIN_CHANGED,
   PLAYER_READY_CHANGED
-
 }
 
-// Action CreatoIdrIds
-
+// Action Creator
 const changePlayerName = (playerId, newName) => {
   return {
     type: PLAYER_NAME_CHANGED,
@@ -35,15 +30,17 @@ const changePlayerSkin = (playerId, newSkin) => {
   }
 }
 
-
-const endPlayerTurn = () => {
-  return {type: PLAYER_TURN_ENDED}
+const changePlayerReady = (playerId, newReady) => {
+  return {
+    type: PLAYER_READY_CHANGED,
+    playerId,
+    newReady
+  }
 }
 
 export const actions = {
-  endPlayerTurn, changePlayerName, changePlayerSkin
+  changePlayerName, changePlayerSkin, changePlayerReady
 }
-
 
 // Reducer
 export const defaultState = {
@@ -51,33 +48,36 @@ export const defaultState = {
   all: getPlayersFor(DEFAULT_PLAYER_IDS)
 }
 
+const updatePlayer = (newPlayer, currentState) => {
+  return {
+    ...currentState,
+    all: {
+      ...currentState.all,
+      [newPlayer.id]: newPlayer
+    }
+  }
+}
+
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case PLAYER_TURN_ENDED:
-      const currentOrder = state.turnOrder
-      const turnOrder = [...currentOrder.slice(1), currentOrder[0]]
-      return {...state, turnOrder}
     case PLAYER_NAME_CHANGED:
-      const renamedPlayer = state.all[action.playerId]
-      renamedPlayer.name = action.newName
-      return {
-        ...state,
-        all: {
-          ...state.all,
-          [action.playerId]: renamedPlayer
-        }
+      const renamedPlayer = {
+        ...state.all[action.playerId],
+        name: action.newName
       }
+      return updatePlayer(renamedPlayer,state)
     case PLAYER_SKIN_CHANGED:
-      const reskinnedPlayer = state.all[action.playerId]
-      reskinnedPlayer.skin = action.newSkin
-      return {
-        ...state,
-        all: {
-          ...state.all,
-          [action.playerId]: reskinnedPlayer
-        }
+      const reskinnedPlayer = {
+        ...state.all[action.actionId],
+        skin: action.newSkin
       }
-
+      return updatePlayer(reskinnedPlayer, state)
+    case PLAYER_READY_CHANGED:
+      const readiedPlayer = {
+        ...state.all[action.playerId],
+        isReady: action.newReady
+      }
+      return updatePlayer(readiedPlayer, state)
     default:
       return state
   }
