@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {compose, setPropTypes} from 'recompose'
 import {actions as gameActions} from 'store/game/reducers'
+import {allReadied} from 'store/player/selectors'
 
 const propTypes = {
   className: PropTypes.string,
@@ -11,7 +12,8 @@ const propTypes = {
 const mapStateToProps = (state, props) => {
   return {
     className: props.className,
-    ...state.game
+    ...state.game,
+    allPlayersReady: allReadied(state),
   }
 }
 

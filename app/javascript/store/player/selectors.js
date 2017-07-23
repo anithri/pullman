@@ -27,6 +27,11 @@ export const currentNames = createSelector(
   players => players.map(p => p.name)
 )
 
+export const currentReadied = createSelector(
+  [allPlayers],
+  players => players.map(p => p.isReady)
+)
+
 export const currentSkins = createSelector(
   [allPlayers],
   players => players.map(p => p.skin)
@@ -47,6 +52,12 @@ export const playerById = (playerId) => {
     }
   )
 }
+
+export const allReadied = createSelector(
+  [currentReadied],
+  readyArr => readyArr.every(r => !!r)
+)
+
 
 
 

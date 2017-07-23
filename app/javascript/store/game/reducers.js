@@ -9,21 +9,12 @@ export const constants = {
   START_GAME
 }
 
-
 const startGame = () => {
   return {
     type: START_GAME,
     gameStartedAt: new Date().toJSON()
   }
 }
-
-// const quitGame = () => {
-//   return (dispatch) => {
-//     dispatch(messageActions.addMessage('QuitGame'))
-//     // destroyGame here
-//     // dispatch(push('/game'))
-//   }
-// }
 
 // Action Creators
 export const actions = {
@@ -32,14 +23,15 @@ export const actions = {
 
 // Reducer
 export const defaultState = {
-  gameStartedAt: null,
+  startedAt: null,
 }
 
 export default function (state = defaultState, action) {
   switch (action.type) {
     case START_GAME:
       return {
-        gameStartedAt: action.gameStartedAt
+        ...state,
+        startedAt: action.gameStartedAt
       }
     default:
       return state
