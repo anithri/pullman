@@ -6,7 +6,7 @@ import makeGrid from 'components/Grid'
 import styles from '../Game.css'
 import grid from '../grid.css'
 
-const {addGrid, addRegion, calcRegion} = makeGrid(grid,'heroGrid')
+const {addGrid, addRegion} = makeGrid(grid,'heroGrid')
 const Grid = addGrid('div')
 
 import OrigWelcome from 'screens/Game/Welcome'
@@ -15,7 +15,10 @@ const Welcome = gameContainer(addRegion('main')(OrigWelcome))
 
 import OrigGamePlayer from 'screens/Game/NewPlayer'
 import playerContainer from 'store/player/container'
-const GamePlayer = playerContainer(calcRegion('id')(OrigGamePlayer))
+const NWPlayer = playerContainer(addRegion('northWest')(OrigGamePlayer))
+const NEPlayer = playerContainer(addRegion('northEast')(OrigGamePlayer))
+const SEPlayer = playerContainer(addRegion('southEast')(OrigGamePlayer))
+const SWPlayer = playerContainer(addRegion('southWest')(OrigGamePlayer))
 
 class InBox extends React.Component {
 
@@ -24,10 +27,10 @@ class InBox extends React.Component {
 
     return (
       <Grid className={className} >
-        <GamePlayer id='alpha' />
-        <GamePlayer id='beta' />
-        <GamePlayer id='gamma' />
-        <GamePlayer id='delta' />
+        <NWPlayer id='alpha' />
+        <NEPlayer id='beta' />
+        <SEPlayer id='gamma' />
+        <SWPlayer id='delta' />
         <Welcome />
       </Grid>
     )

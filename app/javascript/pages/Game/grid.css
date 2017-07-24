@@ -11,15 +11,44 @@
 .default {
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
-  grid-template-areas: "alpha summary beta" "alpha main beta" "alpha main beta" "delta main gamma" "delta main gamma" "delta messages gamma";
+  grid-template-areas: "northWest summary northEast" "northWest main northEast" "northWest main northEast" "southWest main southEast" "southWest main southEast" "southWest messages southEast";
 
 }
 
 .heroGrid {
   grid-template-columns: 2fr 3fr 2fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "alpha main beta" "delta main gamma";
+  grid-template-areas: "northWest main northEast" "southWest main southEast";
 }
+
+.upperThird {
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: repeat(6,1fr);
+  grid-template-areas:
+          "northWest upper northEast"
+          "northWest upper northEast"
+          "northWest main northEast"
+          "southWest main southEast"
+          "southWest main southEast"
+          "southWest main southEast";
+
+}
+
+.upper {
+  grid-area: upper;
+}
+
+.lower {
+  grid-area: lower;
+}
+.heroGrid {
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "northWest main northEast" "southWest main southEast";
+}
+
+
+
 
 .region {
   border-radius: var(--border-radius-3, 3px); /* .br3 */
@@ -28,20 +57,20 @@
   background-color: var(--white-80, white);
 }
 
-.alpha {
-  grid-area: alpha;
+.northWest {
+  grid-area: northWest;
 }
 
-.beta {
-  grid-area: beta;
+.northEast {
+  grid-area: northEast;
 }
 
-.gamma {
-  grid-area: gamma;
+.southEast {
+  grid-area: southEast;
 }
 
-.delta {
-  grid-area: delta;
+.southWest {
+  grid-area: southWest;
 }
 
 .summary {

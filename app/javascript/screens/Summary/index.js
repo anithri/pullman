@@ -10,24 +10,6 @@ const propTypes = {
   game: PropTypes.shape(gameShape)
 }
 
-const Ready = (props) => {
-
-  return (
-    <div className={props.className}>
-      Ready
-    </div>
-  )
-}
-const NotReady = (props) => {
-
-  return (
-    <div className={props.className}>
-      NotReady
-    </div>
-  )
-}
-
-
 class Summary extends React.Component {
   render () {
     const {className, game} = this.props
@@ -35,9 +17,10 @@ class Summary extends React.Component {
       className,
       styles.summary
     )
-    const Body = game.isReady ? Ready : NotReady
     return (
-      <Body className={myClasses} />
+      <div className={myClasses}>
+        <h3>Starting the Game!</h3>
+      </div>
     )
   }
 }

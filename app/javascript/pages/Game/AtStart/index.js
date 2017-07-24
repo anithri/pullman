@@ -6,38 +6,40 @@ import makeGrid from 'components/Grid'
 import styles from '../Game.css'
 import grid from '../grid.css'
 
-const {addGrid, addRegion, calcRegion} = makeGrid(grid,'heroGrid')
+const {addGrid, addRegion} = makeGrid(grid,'upperThird')
 const Grid = addGrid('div')
 
 import OrigSummary from 'screens/Summary'
 
-// import OrigGameMain from 'screens/Game/Main'
-// import gameContainer from 'store/game/reducers'
-// const GameMain = gameContainer(addRegion('main')(OrigGameMain))
-//
-import OrigGameMessages from 'screens/Game/Messages'
+import OrigGameMessages from 'screens/Messages'
 import messagesContainer from 'store/messages/container'
 const GameMessages = messagesContainer(addRegion('main')(OrigGameMessages))
 
 import OrigGamePlayer from 'screens/Game/Player'
 import playerContainer from 'store/player/container'
-const GamePlayer = playerContainer(calcRegion('id')(OrigGamePlayer))
+const NWPlayer = playerContainer(addRegion('northWest')(OrigGamePlayer))
+const NEPlayer = playerContainer(addRegion('northEast')(OrigGamePlayer))
+const SEPlayer = playerContainer(addRegion('southEast')(OrigGamePlayer))
+const SWPlayer = playerContainer(addRegion('southWest')(OrigGamePlayer))
 
-// import OrigGameSummary from 'screens/Game/Summary'
-// const GameSummary = addRegion('summary')(OrigGameSummary)
+
+
+import OrigGameSummary from 'screens/Summary'
+const GameSummary = addRegion('upper')(OrigGameSummary)
 
 class AtStart extends React.Component {
 
   render () {
+
     const className = cx(styles.game)
 
     return (
       <Grid className={className} >
-        <GamePlayer id='alpha' />
-        <GamePlayer id='beta' />
-        <GamePlayer id='gamma' />
-        <GamePlayer id='delta' />
-        {/*<GameSummary/>*/}
+        <NWPlayer id='alpha' />
+        <NEPlayer id='beta' />
+        <SEPlayer id='gamma' />
+        <SWPlayer id='delta' />
+        <GameSummary/>
         <GameMessages/>
         {/*<GameMain/>*/}
       </Grid>
