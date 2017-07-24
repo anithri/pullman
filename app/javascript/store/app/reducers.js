@@ -8,7 +8,6 @@ export const actions = {
 
 // Reducer
 export const defaultState = {
-  woot: 'Prime'
 }
 
 export default function (state = defaultState, action) {

@@ -13,16 +13,9 @@ import OrigWelcome from 'screens/Game/Welcome'
 import gameContainer from 'store/game/container'
 const Welcome = gameContainer(addRegion('main')(OrigWelcome))
 
-import OrigGameMessages from 'screens/Game/Messages'
-import messagesContainer from 'store/messages/container'
-const GameMessages = messagesContainer(addRegion('messages')(OrigGameMessages))
-
 import OrigGamePlayer from 'screens/Game/NewPlayer'
 import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(calcRegion('id')(OrigGamePlayer))
-
-import OrigGameSummary from 'screens/Game/Summary'
-const GameSummary = addRegion('summary')(OrigGameSummary)
 
 class InBox extends React.Component {
 

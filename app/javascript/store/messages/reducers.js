@@ -1,38 +1,37 @@
 // Constants
-
-const MESSAGE_ADDED = 'cards/messages/message_added'
+const ADD = 'cards/messages/add'
 export const constants = {
-  MESSAGE_ADDED
+  ADD
 }
 // Action Creators
 
 
 
-const addMessage = (newMessage) => {
+const add = (message) => {
   return {
-    type: MESSAGE_ADDED,
-    newMessage
+    type: ADD,
+    message
   }
 }
 
 export const actions = {
-  addMessage
+  add
 }
 
 // Reducer
 export const defaultState = {
   all: ['Welcome!'],
-  visibleCount: 5
+  visibleCount: 10
 }
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case MESSAGE_ADDED:
+    case ADD:
       return {
         ...state,
         all: [
           ...state.all,
-          action.newMessage
+          action.message
         ]
       }
     default:

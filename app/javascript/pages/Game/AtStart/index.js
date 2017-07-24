@@ -9,13 +9,15 @@ import grid from '../grid.css'
 const {addGrid, addRegion, calcRegion} = makeGrid(grid,'heroGrid')
 const Grid = addGrid('div')
 
+import OrigSummary from 'screens/Summary'
+
 // import OrigGameMain from 'screens/Game/Main'
 // import gameContainer from 'store/game/reducers'
 // const GameMain = gameContainer(addRegion('main')(OrigGameMain))
 //
-// import OrigGameMessages from 'screens/Game/Messages'
-// import messagesContainer from 'store/messages/container'
-// const GameMessages = messagesContainer(addRegion('messages')(OrigGameMessages))
+import OrigGameMessages from 'screens/Game/Messages'
+import messagesContainer from 'store/messages/container'
+const GameMessages = messagesContainer(addRegion('main')(OrigGameMessages))
 
 import OrigGamePlayer from 'screens/Game/Player'
 import playerContainer from 'store/player/container'
@@ -36,7 +38,7 @@ class AtStart extends React.Component {
         <GamePlayer id='gamma' />
         <GamePlayer id='delta' />
         {/*<GameSummary/>*/}
-        {/*<GameMessages/>*/}
+        <GameMessages/>
         {/*<GameMain/>*/}
       </Grid>
     )

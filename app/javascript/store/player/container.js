@@ -26,9 +26,9 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    doNameChange: (newName) => dispatch(playerActions.changePlayerName(props.id, newName)),
-    doSkinChange: (newSkin) => dispatch(playerActions.changePlayerSkin(props.id, newSkin)),
-    doReadyChange: (newReady) => dispatch(playerActions.changePlayerReady(props.id, newReady))
+    doNameChange: (newName) => dispatch(playerActions.changeName(props.id, newName)),
+    doSkinChange: (newSkin) => dispatch(playerActions.changeSkin(props.id, newSkin)),
+    doReadyChange: (newReady) => dispatch(playerActions.changeReady(props.id, newReady))
   }
 }
 

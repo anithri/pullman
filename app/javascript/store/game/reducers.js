@@ -2,35 +2,50 @@ import {actions as messageActions} from 'store/messages/reducers'
 
 // Constants
 
-const START_GAME = 'cards/game/start'
+const START = 'cards/game/start'
+const READY = 'cards/game/ready'
 
 export const constants = {
-  START_GAME
+  START,
+  READY
 }
 
-const startGame = () => {
+const start = () => {
   return {
-    type: START_GAME,
-    gameStartedAt: new Date().toJSON()
+    type: START,
+    startedAt: new Date().toJSON()
+  }
+}
+
+const isReady = () => {
+  return {
+    type: READY,
+    isReady: true
   }
 }
 
 // Action Creators
 export const actions = {
-  startGame,
+  start,isReady
 }
 
 // Reducer
 export const defaultState = {
   startedAt: null,
+  isReady: false
 }
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case START_GAME:
+    case START:
       return {
         ...state,
-        startedAt: action.gameStartedAt
+        startedAt: action.startedAt
+      }
+    case READY:
+      return {
+        ...state,
+        isReady: action.isReady
       }
     default:
       return state

@@ -9,7 +9,6 @@ function* consoleLog(action) {
   console.log('sagaLog:', action)
 }
 function* watchConsoleLog() {
-
   yield takeEvery(logThis, consoleLog)
 }
 function* messagesSaga() {
