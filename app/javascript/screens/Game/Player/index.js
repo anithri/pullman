@@ -7,12 +7,13 @@ import styles from './Player'
 const propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  skin: PropTypes.string.isRequired
+  skin: PropTypes.string.isRequired,
+  persona: PropTypes.string.isRequired
 }
 
 class Player extends React.Component {
   render () {
-    const {className, id, name, skin} = this.props
+    const {className, id, name, skin, persona} = this.props
     const myClasses = cx(
       className,
       styles.player,
@@ -23,6 +24,7 @@ class Player extends React.Component {
       <div className={myClasses}>
         <header>
           <h3>{name}</h3>
+          <h4>{persona}</h4>
         </header>
       </div>
     )

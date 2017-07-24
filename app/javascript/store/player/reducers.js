@@ -6,11 +6,15 @@ const DEFAULT_IDS = ['alpha', 'beta', 'gamma', 'delta']
 const NAME_CHANGED = 'cards/player/name/changed'
 const SKIN_CHANGED = 'cards/player/skin/changed'
 const READY_CHANGED = 'cards/player/ready/changed'
+const PERSONA_ASSIGNED = 'cards/player/persona/assign'
+const PERSONA_RANDOMIZED = 'cards/player/persona/randomize'
 
 export const constants = {
   NAME_CHANGED,
   SKIN_CHANGED,
-  READY_CHANGED
+  READY_CHANGED,
+  PERSONA_ASSIGNED,
+  PERSONA_RANDOMIZED
 }
 
 // Action Creator
@@ -38,8 +42,16 @@ const changeReady = (playerId, newReady) => {
   }
 }
 
+const assignPersona = (playerId, persona) => {
+  return {
+    type: PERSONA_ASSIGNED,
+    playerId,
+    persona
+  }
+}
+
 export const actions = {
-  changeName, changeSkin, changeReady
+  changeName, changeSkin, changeReady, assignPersona
 }
 
 // Reducer
@@ -78,6 +90,13 @@ export default function (state = defaultState, action) {
         isReady: action.newReady
       }
       return updatePlayer(state, readiedPlayer)
+    case PERSONA_ASSIGNED:
+      const assigned = {
+        ...state.all[action.playerId],
+        persona: action.persona
+      }
+      return updatePlayer(state, assigned)
+
     default:
       return state
   }

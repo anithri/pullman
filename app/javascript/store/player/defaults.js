@@ -70,7 +70,8 @@ export const getPlayersFor = (idArr) => {
       id,
       name: allNames[idx],
       skin: allSkins[idx],
-      isReady: true
+      isReady: true,
+      persona: 'Adventurer',
     }
   })
   return players
