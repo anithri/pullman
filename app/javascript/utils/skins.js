@@ -8,8 +8,5 @@ export const skins = [
   'light-pink', 'dark-green',
   'green', 'light-green',
   'navy', 'dark-blue',
-  'blue', 'light-blue',
-  'lightest-blue', 'washed-blue',
-  'washed-green', 'washed-yellow',
-  'washed-red'
+  'blue', 'light-blue'
 ]

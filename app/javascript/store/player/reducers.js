@@ -71,28 +71,35 @@ const updatePlayer = (currentState, newPlayer) => {
 }
 
 export default function (state = defaultState, action) {
+
   switch (action.type) {
     case NAME_CHANGED:
+      const p = state.all[action.playerId]
       const renamed = {
-        ...state.all[action.playerId],
+        ...p,
         name: action.newName
       }
       return updatePlayer(state,renamed)
     case SKIN_CHANGED:
+      const p = state.all[action.playerId]
       const reskinned = {
-        ...state.all[action.actionId],
+        ...p,
         skin: action.newSkin
       }
+      console.log("SKIN",p,reskinned)
+
       return updatePlayer(state,reskinned)
     case READY_CHANGED:
+      const p = state.all[action.playerId]
       const readiedPlayer = {
-        ...state.all[action.playerId],
+        ...p,
         isReady: action.newReady
       }
       return updatePlayer(state, readiedPlayer)
     case PERSONA_ASSIGNED:
+      const p = state.all[action.playerId]
       const assigned = {
-        ...state.all[action.playerId],
+        ...p,
         persona: action.persona
       }
       return updatePlayer(state, assigned)
