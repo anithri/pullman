@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {compose, setPropTypes} from 'recompose'
-import {actions as playerActions} from './reducers'
+import {PLAYER} from './reducers'
 
-import {playerById, currentNames, currentSkins} from 'store/player/selectors'
+import {playerBySeat, currentNames, currentSkins} from 'store/player/selectors'
 
 const propTypes = {
-  id: PropTypes.string.isRequired,
+  seat: PropTypes.string.isRequired,
   className: PropTypes.string
 }
 
 const mapStateToProps = (state, props) => {
-  const player = playerById(props.id)(state)
+  const player = playerBySeat(props.seat)(state)
   const otherNames = currentNames(state).filter(n => n !== player.name)
   const otherSkins = currentSkins(state).filter(s => s !== player.skin)
   return {
@@ -25,20 +25,33 @@ const mapStateToProps = (state, props) => {
 }
 
 const mapDispatchToProps = (dispatch, props) => {
+  console.log('container',props)
   return {
-    doNameChange: (newName) => dispatch(playerActions.changeName(props.id, newName)),
-    doSkinChange: (newSkin) => dispatch(playerActions.changeSkin(props.id, newSkin)),
-    doReadyChange: (newReady) => dispatch(playerActions.changeReady(props.id, newReady))
+    update: (playerId, attrs) => dispatch(PLAYER.update(playerId, attrs))
+  }
+}
+
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const {id} = stateProps
+  const {update} = dispatchProps
+
+  return {
+    ...stateProps,
+    ...dispatchProps,
+    ...ownProps,
+    doNameChange: (newName) => update(id, {name: newName}),
+    doSkinChange: (newSkin) => update(id, {skin: newSkin}),
+    doReadyChange: (newReady) => update(id, {isReady: newReady})
   }
 }
 
 const playerContainer = compose(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
+    mergeProps
   ),
   setPropTypes(propTypes)
 )
 
 export default playerContainer
-

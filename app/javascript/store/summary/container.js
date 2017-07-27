@@ -4,15 +4,19 @@ import {connect} from 'react-redux'
 // import {compose, setPropTypes} from 'recompose'
 import {currentPhaseText} from './selectors'
 import {actions as gameActions} from 'store/game/reducers'
+import {allReadied} from 'store/player/selectors'
 
 const mapStateToProps = (state, props) => {
   return {
-    game: state.game
+    game: state.game,
+    allPlayersReady: allReadied(state),
+
   }
 }
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    doGameQuit: () => dispatch(gameActions.quit())
   }
 }
 

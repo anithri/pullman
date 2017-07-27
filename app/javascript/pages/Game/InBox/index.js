@@ -1,24 +1,25 @@
 import React from 'react'
 import cx from 'classnames'
-
+import {withProps} from 'recompose'
+import _ from 'lodash'
 import makeGrid from 'components/Grid'
 
 import styles from '../Game.css'
 import grid from '../grid.css'
 
-const {addGrid, addRegion} = makeGrid(grid,'heroGrid')
-const Grid = addGrid('div')
-
 import OrigWelcome from 'screens/Game/Welcome'
 import gameContainer from 'store/game/container'
-const Welcome = gameContainer(addRegion('main')(OrigWelcome))
-
 import OrigGamePlayer from 'screens/Game/NewPlayer'
 import playerContainer from 'store/player/container'
-const NWPlayer = playerContainer(addRegion('northWest')(OrigGamePlayer))
-const NEPlayer = playerContainer(addRegion('northEast')(OrigGamePlayer))
-const SEPlayer = playerContainer(addRegion('southEast')(OrigGamePlayer))
-const SWPlayer = playerContainer(addRegion('southWest')(OrigGamePlayer))
+
+const {addGrid, addRegion} = makeGrid(grid, 'heroGrid')
+const Grid = addGrid('div')
+const Welcome = gameContainer(addRegion('main')(OrigWelcome))
+
+const NorthWest = withProps({seat: 'northWest'})(playerContainer(addRegion('northWest')(OrigGamePlayer)))
+const NorthEast = withProps({seat: 'northEast'})(playerContainer(addRegion('northEast')(OrigGamePlayer)))
+const SouthEast = withProps({seat: 'southEast'})(playerContainer(addRegion('southEast')(OrigGamePlayer)))
+const SouthWest = withProps({seat: 'southWest'})(playerContainer(addRegion('southWest')(OrigGamePlayer)))
 
 class InBox extends React.Component {
 
@@ -26,17 +27,15 @@ class InBox extends React.Component {
     const className = cx(styles.game)
 
     return (
-      <Grid className={className} >
-        <NWPlayer id='alpha' />
-        <NEPlayer id='beta' />
-        <SEPlayer id='gamma' />
-        <SWPlayer id='delta' />
-        <Welcome />
+      <Grid className={className}>
+        <NorthWest/>
+        <NorthEast/>
+        <SouthEast/>
+        <SouthWest/>
+        <Welcome/>
       </Grid>
     )
   }
-
 }
-
 
 export default InBox

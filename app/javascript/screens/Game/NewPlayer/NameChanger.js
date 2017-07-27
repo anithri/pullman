@@ -41,7 +41,6 @@ class NameChanger extends React.Component {
   }
 
   executeSave () {
-    console.log(this.state)
     this.setState({
       status: 'saved'
     })

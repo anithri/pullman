@@ -7,24 +7,42 @@ import gameShape from 'store/game/shape'
 
 const propTypes = {
   className: PropTypes.string,
-  game: PropTypes.shape(gameShape)
+  game: PropTypes.shape(gameShape),
+  doGameQuit: PropTypes.func
 }
 
-class Summary extends React.Component {
+const Unready = ({className, doGameQuit}) => {
+  return (
+    <div className={className}>
+      <h3>Starting the Game!</h3>
+      <button onClick={doGameQuit}>Back to Player Customization</button>
+    </div>
+  )
+}
+
+const Ready = ({className, doGameQuit}) => {
+  return (
+    <div className={className}>
+      <h3>Ready to Play</h3>
+      <button>Lets get started</button>
+      <button onClick={doGameQuit}>Back to Player Customization</button>
+    </div>
+  )
+}
+
+class AtStartSummary extends React.Component {
   render () {
-    const {className, game} = this.props
+    const {className, game, doGameQuit} = this.props
     const myClasses = cx(
       className,
       styles.summary
     )
-    return (
-      <div className={myClasses}>
-        <h3>Starting the Game!</h3>
-      </div>
-    )
+    const MyComp = game.isReady ? Ready : Unready
+    return (<MyComp className={myClasses}
+                    doGameQuit={doGameQuit}/>)
   }
 }
 
-Summary.propTypes = propTypes
+AtStartSummary.propTypes = propTypes
 
-export default Summary
+export default AtStartSummary

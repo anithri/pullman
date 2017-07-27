@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import {skins} from 'utils/skins'
+import {seats} from 'store/game/defaults'
 
 const names = ['Chief of the Reach', 'Elder of Darkness',
   'Prime of the Sun', 'Chief of Silver',
@@ -53,6 +54,7 @@ const names = ['Chief of the Reach', 'Elder of Darkness',
   'Deacon of Time', 'Bishop of Dreams'
 ]
 
+
 const randomizeNames = (count) => {
   return _.sampleSize(names, count)
 }
@@ -62,20 +64,20 @@ const randomizeSkins = (count) => {
 }
 
 export const getPlayersFor = (idArr) => {
-  const allNames = randomizeNames(idArr.length)
-  const allSkins = randomizeSkins(idArr.length)
+  const shuffledNames = randomizeNames(idArr.length)
+  const shuffledSkins = randomizeSkins(idArr.length)
   const players = {}
   idArr.forEach((id, idx) => {
     players[id] = {
       id,
-      name: allNames[idx],
-      skin: allSkins[idx],
+      name: shuffledNames[idx],
+      skin: shuffledSkins[idx],
+      seat: seats[idx],
       isReady: true,
       persona: 'Adventurer',
     }
   })
   return players
 }
-
 
 export default getPlayersFor

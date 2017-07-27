@@ -1,32 +1,19 @@
 import {actions as messageActions} from 'store/messages/reducers'
+import actionCreator, {constCreator} from 'utils/actionCreator'
 
-// Constants
+const defaultActions = ['start','quit','ready','restart','init']
+export const constants = constCreator('cards/game/', defaultActions)
+const C = constants
 
-const START = 'cards/game/start'
-const READY = 'cards/game/ready'
-
-export const constants = {
-  START,
-  READY
-}
-
-const start = () => {
-  return {
-    type: START,
-    startedAt: new Date().toJSON()
-  }
-}
-
-const isReady = () => {
-  return {
-    type: READY,
-    isReady: true
-  }
-}
+const start = actionCreator.onlyType(C.START)
+const isReady = actionCreator.singleVal(C.READY,'isReady')
+const quit = actionCreator.onlyType(C.QUIT)
+const init = actionCreator.onlyType(C.RESTART)
+const restart = actionCreator.onlyType(C.RESTART)
 
 // Action Creators
 export const actions = {
-  start,isReady
+  start,quit,isReady,init,restart
 }
 
 // Reducer
@@ -35,18 +22,24 @@ export const defaultState = {
   isReady: false
 }
 
+export const GAME = {...actions, ...constants}
+
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case START:
-      return {
-        ...state,
-        startedAt: action.startedAt
-      }
-    case READY:
+    case C.READY:
       return {
         ...state,
         isReady: action.isReady
       }
+    case C.RESTART: {
+      return {...defaultState}
+    }
+    case C.INIT: {
+      return {
+        ...state,
+        startedAt: new Date().toJSON()
+      }
+    }
     default:
       return state
   }

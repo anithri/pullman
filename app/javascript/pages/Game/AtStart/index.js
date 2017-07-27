@@ -5,27 +5,33 @@ import makeGrid from 'components/Grid'
 
 import styles from '../Game.css'
 import grid from '../grid.css'
+import {withProps} from 'recompose'
 
-const {addGrid, addRegion} = makeGrid(grid,'upperThird')
+const {addGrid, addRegion} = makeGrid(grid, 'upperThird')
 const Grid = addGrid('div')
 
 import OrigSummary from 'screens/Summary'
 
 import OrigGameMessages from 'screens/Messages'
 import messagesContainer from 'store/messages/container'
+
 const GameMessages = messagesContainer(addRegion('main')(OrigGameMessages))
 
 import OrigGamePlayer from 'screens/Game/Player'
 import playerContainer from 'store/player/container'
-const NWPlayer = playerContainer(addRegion('northWest')(OrigGamePlayer))
-const NEPlayer = playerContainer(addRegion('northEast')(OrigGamePlayer))
-const SEPlayer = playerContainer(addRegion('southEast')(OrigGamePlayer))
-const SWPlayer = playerContainer(addRegion('southWest')(OrigGamePlayer))
+
+const playerRegion = ['northWest', 'northEast', 'southEast', 'southWest']
+
+const NorthWest = withProps({seat: 'northWest'})(playerContainer(addRegion(playerRegion.shift())(OrigGamePlayer)))
+const NorthEast = withProps({seat: 'northEast'})(playerContainer(addRegion(playerRegion.shift())(OrigGamePlayer)))
+const SouthEast = withProps({seat: 'southEast'})(playerContainer(addRegion(playerRegion.shift())(OrigGamePlayer)))
+const SouthWest = withProps({seat: 'southWest'})(playerContainer(addRegion(playerRegion.shift())(OrigGamePlayer)))
 
 
+import OrigGameSummary from 'screens/Summary/AtStart'
+import summaryContainer from 'store/summary/container'
 
-import OrigGameSummary from 'screens/Summary'
-const GameSummary = addRegion('upper')(OrigGameSummary)
+const GameSummary = summaryContainer(addRegion('upper')(OrigGameSummary))
 
 class AtStart extends React.Component {
 
@@ -34,11 +40,11 @@ class AtStart extends React.Component {
     const className = cx(styles.game)
 
     return (
-      <Grid className={className} >
-        <NWPlayer id='alpha' />
-        <NEPlayer id='beta' />
-        <SEPlayer id='gamma' />
-        <SWPlayer id='delta' />
+      <Grid className={className}>
+        <NorthWest/>
+        <NorthEast/>
+        <SouthEast/>
+        <SouthWest/>
         <GameSummary/>
         <GameMessages/>
         {/*<GameMain/>*/}

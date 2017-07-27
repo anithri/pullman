@@ -19,6 +19,16 @@ export const allPlayers = createSelector(
   (playerArr, players) => playerArr.map(playerId => players[playerId])
 )
 
+export const playersBySeat = createSelector(
+  [allPlayers],
+  playersArr => {
+    const bySeat = {}
+    playersArr.forEach(player => {
+      bySeat[player.seat] = player
+    })
+    return bySeat
+  }
+)
 
 export const currentPlayerId = state => state.players.turnOrder[0]
 
@@ -48,6 +58,17 @@ export const playerById = (playerId) => {
     (players) => {
       return {
         ...players[playerId]
+      }
+    }
+  )
+}
+
+export const playerBySeat = (seat) => {
+  return createSelector(
+    [playersBySeat],
+    (players) => {
+      return {
+        ...players[seat]
       }
     }
   )

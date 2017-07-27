@@ -5,7 +5,7 @@
 .player > header > h3 {
   width: 100%; /* .w-100 */
   line-height: var(--line-height-title, 1.0); /* .lh-title */
-  font-size: var(--font-size-3, 2rem); /* .f3 */
+  font-size: var(--font-size-3, 1.5rem); /* .f3 */
   text-align: center; /* .tc */
 }
 

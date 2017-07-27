@@ -8,9 +8,15 @@ import NameChanger from './NameChanger'
 import ReadyChanger from './ReadyChanger'
 
 const propTypes = {
+  className: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  skin: PropTypes.string.isRequired
+  skin: PropTypes.string.isRequired,
+  otherSkins: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  doSkinChange: PropTypes.func.isRequired,
+  doNameChange: PropTypes.func.isRequired,
+  isNameValid: PropTypes.func.isRequired,
+  doReadyChange: PropTypes.func.isRequired,
 }
 
 class NewPlayer extends React.Component {
