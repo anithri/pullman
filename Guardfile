@@ -27,41 +27,6 @@ guard :bundler do
   files.each { |file| watch(helper.real_path(file)) }
 end
 
-guard 'livereload' do
-  extensions = {
-    # css: :css,
-    # js: :js,
-    html: :html,
-    png: :png,
-    gif: :gif,
-    jpg: :jpg,
-    jpeg: :jpeg,
-  }
-
-  rails_view_exts = %w(erb haml slim)
-
-  # file types LiveReload may optimize refresh for
-  compiled_exts = extensions.values.uniq
-  watch(%r{public/.+\.(#{compiled_exts * '|'})})
-
-  extensions.each do |ext, type|
-    watch(%r{
-          (?:app|vendor)
-          (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
-           (?<ext>\.#{ext})) # matching extension (must be first encountered)
-          (?:\.\w+|$) # other extensions
-          }x) do |m|
-      path = m[1]
-      "/assets/#{path}.#{type}"
-    end
-  end
-
-  # file needing a full reload of the page anyway
-  watch(%r{app/views/.+\.(#{rails_view_exts * '|'})$})
-  watch(%r{app/helpers/.+\.rb})
-  watch(%r{config/locales/.+\.yml})
-end
-
 # Guard-Rails supports a lot options with default values:
 # daemon: false                        # runs the server as a daemon.
 # debugger: false                      # enable ruby-debug gem.
@@ -100,3 +65,41 @@ guard :foreman do
   watch(/^config\/webpacker\.yml/)
   watch(/^config\/webpack\//)
 end
+
+
+guard 'livereload' do
+  extensions = {
+      # css: :css,
+      # js: :js,
+      html: :html,
+      png: :png,
+      gif: :gif,
+      jpg: :jpg,
+      jpeg: :jpeg,
+  }
+
+  rails_view_exts = %w(erb haml slim)
+
+  # file types LiveReload may optimize refresh for
+  compiled_exts = extensions.values.uniq
+  watch(%r{public/.+\.(#{compiled_exts * '|'})})
+
+  extensions.each do |ext, type|
+    watch(%r{
+          (?:app|vendor)
+          (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
+           (?<ext>\.#{ext})) # matching extension (must be first encountered)
+          (?:\.\w+|$) # other extensions
+          }x) do |m|
+      path = m[1]
+      "/assets/#{path}.#{type}"
+    end
+  end
+
+  # file needing a full reload of the page anyway
+  watch(%r{app/views/.+\.(#{rails_view_exts * '|'})$})
+  watch(%r{app/helpers/.+\.rb})
+  watch(%r{config/locales/.+\.yml})
+end
+
+`xdg-open http://localhost:3000`
