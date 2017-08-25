@@ -1,4 +1,4 @@
-.Home {
+.about {
   composes: grid from 'styles/grid.css';
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;

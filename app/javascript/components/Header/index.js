@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import styles from './Header.css'
+import styles from './styles.css'
 import Link from 'react-router-redux-dom-link';
 
 const propTypes = {

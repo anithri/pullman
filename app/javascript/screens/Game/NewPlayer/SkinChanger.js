@@ -1,5 +1,5 @@
 import React from 'react'
-import {skins} from 'utils/skins'
+import {skins} from 'lib/skins'
 import styles from './NewPlayer'
 
 const SkinOption = (props) => {

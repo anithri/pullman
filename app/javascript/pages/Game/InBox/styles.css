@@ -1,0 +1,33 @@
+.inBox {
+  composes: grid from 'styles/grid.css';
+
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "northWest main northEast" "southWest main southEast";
+}
+
+.northWest {
+  composes: region from 'styles/grid.css';
+  grid-area: northWest;
+}
+
+.northEast {
+  composes: region from 'styles/grid.css';
+  grid-area: northEast;
+}
+
+.southEast {
+  composes: region from 'styles/grid.css';
+  grid-area: southEast;
+}
+
+.southWest {
+  composes: region from 'styles/grid.css';
+  grid-area: southWest;
+}
+
+.main {
+  composes: region from 'styles/grid.css';
+  grid-area: main;
+  overflow-y: scroll;
+}

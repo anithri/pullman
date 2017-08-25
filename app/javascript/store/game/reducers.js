@@ -1,5 +1,5 @@
 import {actions as messageActions} from 'store/messages/reducers'
-import actionCreator, {constCreator} from 'utils/actionCreator'
+import actionCreator, {constCreator} from 'lib/actionCreator'
 
 const defaultActions = ['start','quit','ready','restart','init']
 export const constants = constCreator('cards/game/', defaultActions)

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import styles from './Footer.css'
+import styles from './styles.css'
 
 const propTypes = {
   className: PropTypes.string,

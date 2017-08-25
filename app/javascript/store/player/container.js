@@ -8,7 +8,6 @@ import {playerBySeat, currentNames, currentSkins} from 'store/player/selectors'
 
 const propTypes = {
   seat: PropTypes.string.isRequired,
-  className: PropTypes.string
 }
 
 const mapStateToProps = (state, props) => {

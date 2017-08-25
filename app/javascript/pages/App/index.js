@@ -6,7 +6,7 @@ import createStore, {APP_HISTORY} from 'store'
 import initialState from 'store/initial_state.json'
 import PageRoutes from 'pages/routes'
 
-import styles from './App.css'
+import styles from './styles.css'
 
 const store = createStore(initialState)
 

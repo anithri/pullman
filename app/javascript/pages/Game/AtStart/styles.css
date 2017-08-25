@@ -1,0 +1,44 @@
+.atStart {
+  composes: grid from 'styles/grid.css';
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
+  grid-template-areas: "northWest summary northEast" "northWest main northEast" "northWest main northEast" "southWest main southEast" "southWest main southEast" "southWest messages southEast";
+}
+
+.northWest {
+  composes: region from 'styles/grid.css';
+  grid-area: northWest;
+}
+
+.northEast {
+  composes: region from 'styles/grid.css';
+  grid-area: northEast;
+}
+
+.southEast {
+  composes: region from 'styles/grid.css';
+  grid-area: southEast;
+}
+
+.southWest {
+  composes: region from 'styles/grid.css';
+  grid-area: southWest;
+}
+
+.summary {
+  composes: region from 'styles/grid.css';
+  grid-area: summary;
+}
+
+.messages {
+  composes: region from 'styles/grid.css';
+  grid-area: messages;
+  overflow-y: scroll;
+}
+
+.main {
+  composes: region from 'styles/grid.css';
+  grid-area: main;
+  overflow-y: scroll;
+}

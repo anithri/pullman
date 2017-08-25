@@ -1,0 +1,108 @@
+/* Meant to be for combinations involving
+   padding/border/color/background-color */
+
+.skin-dark-red {
+  background-color: #e7040f;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-red {
+  background-color: #ff4136;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-light-red {
+  background-color: #ff725c;
+  color: var(--near-black, #101010);
+}
+.skin-orange {
+  background-color: #ff6300;
+  color: var(--near-black, #101010);
+}
+.skin-gold {
+  background-color: #ffb700;
+  color: var(--near-black, #101010);
+}
+.skin-yellow {
+  background-color: #ffd700;
+  color: var(--near-black, #101010);
+}
+.skin-light-yellow {
+  background-color: #fbf1a9;
+  color: var(--near-black, #101010);
+}
+.skin-purple {
+  background-color: #5e2ca5;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-light-purple {
+  background-color: #a463f2;
+  color: var(--near-black, #101010);
+}
+.skin-dark-pink {
+  background-color: #d5008f;
+  color: var(--near-black, #101010);
+}
+.skin-hot-pink {
+  background-color: #ff41b4;
+  color: var(--near-black, #101010);
+}
+.skin-pink {
+  background-color: #ff80cc;
+  color: var(--near-black, #101010);
+}
+.skin-light-pink {
+  background-color: #ffa3d7;
+  color: var(--near-black, #101010);
+}
+.skin-dark-green {
+  background-color: #137752;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-green {
+  background-color: #19a974;
+  color: var(--near-black, #101010);
+}
+.skin-light-green {
+  background-color: #9eebcf;
+  color: var(--near-black, #101010);
+}
+.skin-navy {
+  background-color: #001b44;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-dark-blue {
+  background-color: #00449e;
+  color: var(--near-white, #f0f0f0);
+}
+.skin-blue {
+  background-color: #357edd;
+  color: var(--near-black, #101010);
+}
+.skin-light-blue {
+  background-color: #96ccff;
+  color: var(--near-black, #101010);
+}
+.skin-lightest-blue {
+  background-color: #cdecff;
+  color: var(--near-black, #101010);
+}
+.skin-washed-blue {
+  background-color: #f6fffe;
+  color: var(--near-black, #101010);
+}
+.skin-washed-green {
+  background-color: #e8fdf5;
+  color: var(--near-black, #101010);
+}
+.skin-washed-yellow {
+  background-color: #fffceb;
+  color: var(--near-black, #101010);
+}
+.skin-washed-red {
+  background-color: #ffdfdf;
+  color: var(--near-black, #101010);
+}
+.skin-disabled {
+  color: var(--gray, #777);
+  background-color: var(--light-gray, #eee)
+}
+

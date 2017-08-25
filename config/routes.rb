@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'game', to: 'pages#home'
   root to: 'pages#home'
 
+  get 'oops', to: 'pages#home'
   get 'game/start', to: 'pages#home'
   get 'game/final', to: 'pages#home'
   get 'game/round/:roundid', to: 'pages#home'

@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import {skins} from 'utils/skins'
+import {skins} from 'lib/skins'
 import {seats} from 'store/game/defaults'
 
 const names = ['Chief of the Reach', 'Elder of Darkness',
