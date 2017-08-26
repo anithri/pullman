@@ -63,6 +63,17 @@ const randomizeSkins = (count) => {
   return _.sampleSize(skins, count)
 }
 
+export const cleanPlayer = {
+  mystery: 0,
+  magic: 0,
+  mayhem: 0,
+  monies: 0,
+  morale: 0,
+  locations: [],
+  persona: 'Adventurer',
+  isReady: true,
+}
+
 export const getPlayersFor = (idArr) => {
   const shuffledNames = randomizeNames(idArr.length)
   const shuffledSkins = randomizeSkins(idArr.length)
@@ -73,8 +84,7 @@ export const getPlayersFor = (idArr) => {
       name: shuffledNames[idx],
       skin: shuffledSkins[idx],
       seat: seats[idx],
-      isReady: true,
-      persona: 'Adventurer',
+      ...cleanPlayer
     }
   })
   return players

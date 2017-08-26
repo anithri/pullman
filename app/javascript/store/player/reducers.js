@@ -1,18 +1,24 @@
 import _ from 'lodash'
 import {getPlayersFor} from './defaults'
 import actionCreator, {constCreator} from 'lib/actionCreator'
+import {cleanPlayer} from './defaults'
 import {allPersonas} from 'store/persona/selectors'
 import {seats} from 'store/game/defaults'
 
 const defaultActions = [
-  'update'
+  'update',
+  'reset/all',
+  'reset/one'
 ]
 
 const DEFAULT_IDS = ['alpha', 'beta', 'gamma', 'delta']
 
 export const constants = constCreator('cards/player/', defaultActions)
+console.log(constants)
 const C = constants
 // Action Creator
+const resetAll = actionCreator.onlyType(C.RESET_ALL)
+const resetOne = actionCreator.singleVal(C.RESET_ONE, 'playerId')
 
 const update = (playerId, attrs) => {
   return {
@@ -26,7 +32,9 @@ const update = (playerId, attrs) => {
 }
 
 export const actions = {
-  update
+  resetOne,
+  update,
+  resetAll
 }
 
 export const PLAYER = {...constants, ...actions}
@@ -37,9 +45,10 @@ export const defaultState = {
   all: getPlayersFor(DEFAULT_IDS)
 }
 
+
 const insertPlayer = (currentState, newPlayer, attrs) => {
   if (newPlayer) {
-    console.log('updating',newPlayer, attrs)
+    console.log('updating', newPlayer, attrs)
     return {
       ...currentState,
       all: {
@@ -51,7 +60,7 @@ const insertPlayer = (currentState, newPlayer, attrs) => {
       }
     }
   } else {
-    console.error('player/reducer','no player found', attrs)
+    console.error('player/reducer', 'no player found', attrs)
     return currentState
   }
 }
@@ -63,6 +72,8 @@ export default function (state = defaultState, action) {
     case C.UPDATE:
       console.log('reducing', p, action)
       return insertPlayer(state, p, action.updates)
+    case C.RESET_ONE:
+      return insertPlayer(state, p, cleanPlayer)
     default:
       return state
   }

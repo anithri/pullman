@@ -7,30 +7,17 @@ import {seats} from '../defaults'
 import {allPlayers} from 'store/player/selectors'
 import {actions as message} from 'store/messages/reducers'
 import {push} from 'react-router-redux'
-import {gameRestartSaga} from './restart'
 
 function* updatePlayer(attr) {
   yield call(PLAYER.update, attr)
 }
 
-function* gameStartSaga () {
-  yield put(push('/game/start'))
-  yield put(GAME.init())
-  yield gameRestartSaga()
-  yield put(message.add('Randomizing everything'))
-  // yield put(PLAYER.shufflePersonas())
-  // yield put(PLAYER.shuffleSeats())
-  yield put(message.add('Getting the Game ready'))
-  yield delay(Math.random() * 2000)
-  yield put(message.add('Seating the players'))
-  yield delay(Math.random() * 2000)
-  yield put(message.add('Setting up the board'))
-  yield delay(Math.random() * 2000)
-  yield put(message.add('Final Touches'))
-  yield delay(Math.random() * 2000)
+export function* gameRestartSaga () {
+  yield put(PLAYER.resetAll())
+  yield put(message.add('Clearing the Board'))
 }
 
-function* watchGameStart () {
+function* watchGameRestart () {
   while (true) {
     yield take(GAME.START)
     const {response, cancel} = yield race({
@@ -43,4 +30,4 @@ function* watchGameStart () {
   }
 }
 
-export default watchGameStart
+export default watchGameRestart

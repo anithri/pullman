@@ -13,6 +13,21 @@ const RoundAtEnd = (props) => <div>RoundAtEnd</div>
 const GameAtEnd = (props) => <div>GameAtEnd</div>
 const GameError = (props) => <div>GameError</div>
 
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    fakeAuth.isAuthenticated ? (
+      <Component {...props}/>
+    ) : (
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: props.location }
+      }}/>
+    )
+  )}/>
+)
+
+
 class GameRoutes extends React.Component {
   render () {
     return (

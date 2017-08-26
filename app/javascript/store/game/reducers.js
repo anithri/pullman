@@ -5,12 +5,17 @@ const defaultActions = ['start','quit','ready','restart','init']
 export const constants = constCreator('cards/game/', defaultActions)
 const C = constants
 
-const start = actionCreator.onlyType(C.START)
 const isReady = actionCreator.singleVal(C.READY,'isReady')
 const quit = actionCreator.onlyType(C.QUIT)
 const init = actionCreator.onlyType(C.RESTART)
 const restart = actionCreator.onlyType(C.RESTART)
 
+const start = () => {
+  return {
+    type: C.START,
+    startedAt: new Date().toJSON()
+  }
+}
 // Action Creators
 export const actions = {
   start,quit,isReady,init,restart
@@ -31,8 +36,11 @@ export default function (state = defaultState, action) {
         ...state,
         isReady: action.isReady
       }
-    case C.RESTART: {
-      return {...defaultState}
+    case C.START: {
+      return {
+        ...defaultState,
+        startedAt: action.startedAt
+      }
     }
     case C.INIT: {
       return {
