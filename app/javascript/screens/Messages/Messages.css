@@ -1,3 +1,10 @@
 .messages {
+  margin: var(--spacing-none); /* .ma0 */
+  padding: var(--spacing-none); /* .pa0 */
+}
 
+.messages p {
+  padding: var(--spacing-extra-small); /* .pa1 */
+  font-size: var(--font-size-4); /* .f2 */
+  padding-left: var(--spacing-small); /* .pl2 */
 }

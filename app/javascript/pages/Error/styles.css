@@ -1,14 +1,18 @@
 .error {
-  composes: flexCenterWrapper from '../App/styles.css';
+  composes: wrapper from 'styles/flexCenter.css';
   margin: auto;
-  background-color: var(--light-red,lightpink); /* .bg-light-red */
+  background-color: var(--light-red, lightpink); /* .bg-light-red */
   text-align: center; /* .tc */
 
 }
 
 .message {
-  composes: flexCentered from '../App/styles.css';
+  composes: centered from 'styles/flexCenter.css';
   color: var(--white); /* .white */
+}
 
+.message a {
+  text-decoration: none;
+  color: var(--dark-red); /* .dark-red */
 
 }

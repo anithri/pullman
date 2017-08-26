@@ -18,12 +18,10 @@ class Messages extends React.Component {
         this.props.className,
         styles.messages
     )
-    const list = this.props.messages.map((msg,idx) => (<li key={idx}>{msg}</li>))
+    const list = this.props.messages.map((msg,idx) => (<p key={idx}>{msg}</p>))
     return (
       <div className={myClasses}>
-        <ul>
           {list}
-        </ul>
       </div>
     )
   }

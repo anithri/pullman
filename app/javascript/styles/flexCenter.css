@@ -1,0 +1,25 @@
+.wrapper {
+  height: 100%; /* .h-100 */
+  width: 100%; /* .w-100 */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.wrapperRow {
+  composes: wrapper;
+}
+
+.wrapperCol {
+  composes: wrapper;
+  flex-direction: column;
+}
+
+.centered {
+  order: 0;
+  flex: 0 0 auto;
+  align-self: center;
+}

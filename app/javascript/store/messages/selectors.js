@@ -5,5 +5,5 @@ export const visibleMessageCount = state => state.messages.visibleCount
 
 export const visibleMessages = createSelector(
   [allMessages,visibleMessageCount],
-  (all,count) => all.slice(-1 * count)
+  (all,count) => all.slice(-1 * count).reverse()
 )
