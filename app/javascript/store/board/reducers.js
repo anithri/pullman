@@ -6,13 +6,6 @@ export const constants = {
 export const actions = {
 }
 
-// Reducer
-export const defaultState = {
-  frontier: [],
-  wilderness: [],
-  city: [],
-}
-
 export default function (state = defaultState, action) {
   switch (action.type) {
     default:

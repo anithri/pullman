@@ -4,3 +4,5 @@ export const initialBoard = {
   wilderness: [],
   lair: ['Lair']
 }
+
+export default initialBoard
