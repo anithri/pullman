@@ -6,5 +6,12 @@ export const player = {
   skin: PropTypes.string.isRequired,
   seat: PropTypes.string.isRequired,
   persona: PropTypes.string.isRequired,
-  isReady: PropTypes.bool
+  isReady: PropTypes.bool,
+  mystery: PropTypes.number.isRequired,
+  magic: PropTypes.number.isRequired,
+  mayhem: PropTypes.number.isRequired,
+  monies: PropTypes.number.isRequired,
+  morale: PropTypes.number.isRequired,
 }
+
+export default player

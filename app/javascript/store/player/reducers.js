@@ -14,7 +14,6 @@ const defaultActions = [
 const DEFAULT_IDS = ['alpha', 'beta', 'gamma', 'delta']
 
 export const constants = constCreator('cards/player/', defaultActions)
-console.log(constants)
 const C = constants
 // Action Creator
 const resetAll = actionCreator.onlyType(C.RESET_ALL)
@@ -48,7 +47,6 @@ export const defaultState = {
 
 const insertPlayer = (currentState, newPlayer, attrs) => {
   if (newPlayer) {
-    console.log('updating', newPlayer, attrs)
     return {
       ...currentState,
       all: {
@@ -70,7 +68,6 @@ export default function (state = defaultState, action) {
 
   switch (action.type) {
     case C.UPDATE:
-      console.log('reducing', p, action)
       return insertPlayer(state, p, action.updates)
     case C.RESET_ONE:
       return insertPlayer(state, p, cleanPlayer)

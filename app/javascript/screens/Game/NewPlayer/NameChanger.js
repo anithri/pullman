@@ -49,7 +49,6 @@ class NameChanger extends React.Component {
   }
 
   resetStatus () {
-    console.log(this.state)
     this.setState({
       status: 'clean'
     })

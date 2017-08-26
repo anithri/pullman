@@ -12,6 +12,7 @@ const propTypes = {
 
 const mapStateToProps = (state, props) => {
   const player = playerBySeat(props.seat)(state)
+  console.log('player',player)
   const otherNames = currentNames(state).filter(n => n !== player.name)
   const otherSkins = currentSkins(state).filter(s => s !== player.skin)
   return {
@@ -24,7 +25,6 @@ const mapStateToProps = (state, props) => {
 }
 
 const mapDispatchToProps = (dispatch, props) => {
-  console.log('container',props)
   return {
     update: (playerId, attrs) => dispatch(PLAYER.update(playerId, attrs))
   }
