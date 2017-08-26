@@ -1,0 +1,56 @@
+.card {
+  margin: var(--spacing-none); /* .ma0 */
+  padding: var(--spacing-none); /* .pa0 */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: stretch;
+}
+
+.card > * {
+  padding-left: var(--spacing-small); /* .ph2 */
+  padding-right: var(--spacing-small);
+  padding-top: var(--spacing-extra-small); /* .pv1 */
+  padding-bottom: var(--spacing-extra-small);
+}
+
+.card > header > h3 {
+  width: 100%; /* .w-100 */
+  line-height: var(--line-height-title, 1.0); /* .lh-title */
+  font-size: var(--font-size-3, 1.5em); /* .f3 */
+  text-align: center; /* .tc */
+}
+
+.card header {
+  order: 1;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.card footer {
+  order: 4;
+  flex: 0 1 auto;
+  align-self: auto;
+  background-color: var(--black-10); /* .bg-black-10 */
+
+}
+
+.card section {
+  order: 3;
+  flex: 1 1 auto;
+  align-self: auto;
+}
+
+.card nav {
+  order: 2;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.card figure {
+  order: 3;
+  flex: 0 1 auto;
+  align-self: auto;
+}
