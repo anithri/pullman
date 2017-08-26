@@ -14,6 +14,7 @@ function* updatePlayer(attr) {
 
 export function* gameRestartSaga () {
   yield put(PLAYER.resetAll())
+  yield put(PLAYER.assignPersonas())
   yield put(message.add('Clearing the Board'))
 }
 

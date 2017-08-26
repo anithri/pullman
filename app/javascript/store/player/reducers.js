@@ -8,7 +8,8 @@ import {seats} from 'store/game/defaults'
 const defaultActions = [
   'update',
   'reset/all',
-  'reset/one'
+  'reset/one',
+  'assign/personas'
 ]
 
 const DEFAULT_IDS = ['alpha', 'beta', 'gamma', 'delta']
@@ -18,6 +19,7 @@ const C = constants
 // Action Creator
 const resetAll = actionCreator.onlyType(C.RESET_ALL)
 const resetOne = actionCreator.singleVal(C.RESET_ONE, 'playerId')
+const assignPersonas = actionCreator.onlyType(C.ASSIGN_PERSONAS)
 
 const update = (playerId, attrs) => {
   return {
@@ -33,7 +35,8 @@ const update = (playerId, attrs) => {
 export const actions = {
   resetOne,
   update,
-  resetAll
+  resetAll,
+  assignPersonas
 }
 
 export const PLAYER = {...constants, ...actions}
