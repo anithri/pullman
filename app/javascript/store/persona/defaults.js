@@ -4,10 +4,10 @@ const allPersona = {
     name: 'Adept',
     power: ['Magic', 'Mayhem'],
     startingValues: {
-      magic: 1,
-      mystery: 0,
-      mayhem: 1,
-      monies: 0,
+      magic: 3,
+      mystery: 2,
+      mayhem: 3,
+      monies: 2,
       morale: 5
     }
   },
@@ -16,10 +16,10 @@ const allPersona = {
     name: 'Cultist',
     power: ['Magic', 'Mystery'],
     startingValues: {
-      magic: 1,
-      mystery: 1,
-      mayhem: 0,
-      monies: 0,
+      magic: 3,
+      mystery: 3,
+      mayhem: 2,
+      monies: 2,
       morale: 5
     }
   },
@@ -28,10 +28,10 @@ const allPersona = {
     name: 'Monk',
     power: ['Mystery', 'Mystery'],
     startingValues: {
-      magic: 0,
-      mystery: 2,
-      mayhem: 0,
-      monies: 0,
+      magic: 2,
+      mystery: 4,
+      mayhem: 2,
+      monies: 2,
       morale: 5
     }
   },
@@ -40,10 +40,10 @@ const allPersona = {
     name: 'Rogue',
     power: ['Mayhem', 'Mystery'],
     startingValues: {
-      magic: 0,
-      mystery: 1,
-      mayhem: 1,
-      monies: 0,
+      magic: 2,
+      mystery: 3,
+      mayhem: 3,
+      monies: 2,
       morale: 5
     }
   },
@@ -52,10 +52,10 @@ const allPersona = {
     name: 'Sorcerer',
     power: ['Magic', 'Magic'],
     startingValues: {
-      magic: 2,
-      mystery: 0,
-      mayhem: 0,
-      monies: 0,
+      magic: 4,
+      mystery: 2,
+      mayhem: 2,
+      monies: 2,
       morale: 5
     }
   },
@@ -64,10 +64,10 @@ const allPersona = {
     name: 'Warrior',
     power: ['Mayhem', 'Mayhem'],
     startingValues: {
-      magic: 0,
-      mystery: 0,
-      mayhem: 2,
-      monies: 0,
+      magic: 2,
+      mystery: 2,
+      mayhem: 4,
+      monies: 2,
       morale: 5
     }
   }

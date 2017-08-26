@@ -69,6 +69,7 @@ export const cleanPlayer = {
   mayhem: 0,
   monies: 0,
   morale: 0,
+  menace: 0,
   locations: [],
   persona: 'Adventurer',
   isReady: true,

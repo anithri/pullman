@@ -22,7 +22,6 @@ function* playerResetSaga () {
   const allPersonas = _shuffle(Object.keys(personas))
   yield currentPlayers.map(playerId => put(PLAYER.resetOne(playerId)))
   yield currentPlayers.map((playerId, i) => put(assignPersona(playerId, allPersonas[i])))
-
 }
 
 function* watchPlayerReset () {

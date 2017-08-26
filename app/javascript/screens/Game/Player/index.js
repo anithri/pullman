@@ -13,7 +13,7 @@ class Player extends React.Component {
   render () {
     const {
       className, id, name, skin, persona,
-      mystery, magic, mayhem, monies, morale
+      mystery, magic, mayhem, monies, morale, menace
     } = this.props
     const myClasses = cx(
       className,
@@ -27,11 +27,12 @@ class Player extends React.Component {
           <h4>{persona}</h4>
         </header>
         <section>
-          <div>mystery: {mystery}</div>
-          <div>magic: {magic}</div>
-          <div>mayhem: {mayhem}</div>
-          <div>monies: {monies}</div>
-          <div>morale: {morale}</div>
+          <div>Magic: {magic}</div>
+          <div>Mayhem: {mayhem}</div>
+          <div>Menace: {menace}</div>
+          <div>Monies: {monies}</div>
+          <div>Morale: {morale}</div>
+          <div>Mystery: {mystery}</div>
         </section>
         <footer>
           Footer
