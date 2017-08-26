@@ -19,7 +19,7 @@
 .card > header > h3 {
   width: 100%; /* .w-100 */
   line-height: var(--line-height-title, 1.0); /* .lh-title */
-  font-size: var(--font-size-3, 1.5em); /* .f3 */
+  font-size: var(--font-size-3); /* .f3 */
   text-align: center; /* .tc */
 }
 
@@ -34,7 +34,6 @@
   flex: 0 1 auto;
   align-self: auto;
   background-color: var(--black-10); /* .bg-black-10 */
-
 }
 
 .card section {
