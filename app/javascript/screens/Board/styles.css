@@ -1,0 +1,27 @@
+.board {
+
+}
+.region {
+  border-style: solid; /* .ba */
+  border-width: 1px;
+
+}
+.city {
+  background-color: var(--washed-green); /* .bg-light-green */
+
+}
+
+.frontier {
+  background-color: var(--washed-yellow); /* .bg-light-yellow */
+
+}
+
+.wilderness {
+  background-color: var(--washed-red); /* .bg-washed-red */
+
+}
+
+.lair {
+background-color: var(--light-purple); /* .bg-light-purple */
+
+}

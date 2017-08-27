@@ -17,6 +17,8 @@ import OrigGameSummary from 'screens/Summary/AtStart'
 import summaryContainer from 'store/summary/container'
 const GameSummary = summaryContainer(OrigGameSummary)
 
+import Board from 'screens/Board'
+
 class AtStart extends React.Component {
 
   render () {
@@ -29,7 +31,7 @@ class AtStart extends React.Component {
         {/*<GameSummary/>*/}
         <div className={styles.summary}>&nbsp;</div>
         <GameMessages className={styles.messages}/>
-        <div className={styles.main}>&nbsp;</div>
+        <Board className={styles.main}/>
         {/*<GameMain/>*/}
       </div>
     )

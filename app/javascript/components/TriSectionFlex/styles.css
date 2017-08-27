@@ -1,0 +1,57 @@
+.triSectionFlex {
+  composes: grid from 'styles/grid.css';
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left center right";
+}
+
+.side {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: stretch;
+}
+
+.left {
+  flex-direction: row-reverse;
+  grid-area: left;
+  composes: side;
+}
+
+.center {
+  grid-area: center;
+  background-color: var(--black-20); /* .bg-black-20 */
+
+}
+
+.right {
+  flex-direction: row;
+  composes: side;
+  grid-area: right;
+}
+
+.card {
+  font-size: var(--font-size-5); /* .f5 */
+
+
+}
+
+.flex-container {
+}
+
+.flex-item:nth-child(1) {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.flex-item:nth-child(2) {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.flex-item:nth-child(3) {
+  align-self: auto;
+}

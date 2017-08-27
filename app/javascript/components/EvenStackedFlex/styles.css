@@ -1,0 +1,13 @@
+.evenStackedFlex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+}
+
+.evenStackedFlex > * {
+  flex: 1 1 auto;
+}
+
