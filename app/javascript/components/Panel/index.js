@@ -11,7 +11,7 @@ const propTypes = {
   skin: PropTypes.string
 }
 
-class Card extends React.Component {
+class Panel extends React.Component {
   render() {
     const myClasses = cx(
         this.props.className,
@@ -19,17 +19,17 @@ class Card extends React.Component {
        `card-${this.props.skin}`
 
     )
-    const MyCard = this.props.withComponent
+    const MyPanel = this.props.withComponent
     return (
-      <MyCard className={myClasses}>
+      <MyPanel className={myClasses}>
         {this.props.children}
-      </MyCard>
+      </MyPanel>
     )
   }
 }
 
-Card.propTypes = propTypes
-Card.defaultProps = {
+Panel.propTypes = propTypes
+Panel.defaultProps = {
   withComponent: 'article'
 }
-export default Card
+export default Panel

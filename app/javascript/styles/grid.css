@@ -13,3 +13,15 @@
   border-width: 1px;
   background-color: var(--white-80, white);
 }
+
+.septArea {
+  grid-template-columns: var(--sidebar-width, 77px) 1fr var(--sidebar-width, 20rem);
+  grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
+  grid-template-areas:  "northWest summary northEast"
+                        "northWest main northEast"
+                        "northWest main northEast"
+                        "southWest main southEast"
+                        "southWest main southEast"
+                        "southWest messages southEast";
+
+}

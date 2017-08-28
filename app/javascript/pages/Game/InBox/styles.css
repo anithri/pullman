@@ -1,7 +1,7 @@
 .inBox {
   composes: grid from 'styles/grid.css';
+  composes: septArea from 'styles/grid.css';
 
-  grid-template-columns: 2fr 3fr 2fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "northWest main northEast" "southWest main southEast";
 }

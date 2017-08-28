@@ -12,7 +12,6 @@ const propTypes = {
 
 const mapStateToProps = (state, props) => {
   const player = playerBySeat(props.seat)(state)
-  console.log('player',player)
   const otherNames = currentNames(state).filter(n => n !== player.name)
   const otherSkins = currentSkins(state).filter(s => s !== player.skin)
   return {

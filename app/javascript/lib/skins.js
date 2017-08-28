@@ -3,7 +3,7 @@ export const skins = [
   'light-red', 'orange',
   'gold', 'yellow',
   'light-yellow', 'purple',
-  'light-purple', 'dark-pink',
+  'dark-pink',
   'hot-pink', 'pink',
   'light-pink', 'dark-green',
   'green', 'light-green',

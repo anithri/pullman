@@ -2,6 +2,6 @@ plugins:
   postcss-smart-import: {}
 #  precss: {}
   postcss-cssnext:
-    postcss-custom-properties:
-      warn: false
+    features:
+      customProperties: false
 #  autoprefixer: {}

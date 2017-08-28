@@ -1,9 +1,6 @@
 .atStart {
   composes: grid from 'styles/grid.css';
-
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
-  grid-template-areas: "northWest summary northEast" "northWest main northEast" "northWest main northEast" "southWest main southEast" "southWest main southEast" "southWest messages southEast";
+  composes: septArea from 'styles/grid.css';
 }
 
 .northWest {

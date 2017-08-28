@@ -11,7 +11,7 @@ const propTypes = {
 class <%= pascalEntityName %> extends React.Component {
   render() {
     const myClasses = cx(
-        props.className,
+        this.props.className,
         styles.<%= camelEntityName %>
     )
     return (

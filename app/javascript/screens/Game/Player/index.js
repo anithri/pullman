@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
-import Card from 'components/Card'
+import Panel from 'components/Panel'
 import playerShape from 'store/player/shape'
 import styles from './styles'
 
@@ -21,7 +21,7 @@ class Player extends React.Component {
       styles[id]
     )
     return (
-      <Card className={myClasses} skin={skin}>
+      <Panel className={myClasses} skin={skin}>
         <header>
           <h3>{name}</h3>
           <h4>{persona}</h4>
@@ -37,7 +37,7 @@ class Player extends React.Component {
         <footer>
           Footer
         </footer>
-      </Card>
+      </Panel>
     )
   }
 }

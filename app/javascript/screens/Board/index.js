@@ -4,7 +4,8 @@ import cx from 'classnames'
 import EvenStackedFlex from 'components/EvenStackedFlex'
 
 import styles from './styles.css'
-import Region, {CityRegion, FrontierRegion, WildernessRegion, LairRegion} from './Region'
+import Region, {CityRegion, FrontierRegion, BorderRegion,
+  WildernessRegion, LairRegion} from './Region'
 
 const propTypes = {
   className: PropTypes.string
@@ -18,10 +19,11 @@ class Board extends React.Component {
     )
     return (
       <EvenStackedFlex className={myClasses}>
-        <CityRegion left={[]} center={['Tavern']} right={[]}/>
-        <FrontierRegion left={[]} center={['Final Keep']} right={[]}/>
-        <WildernessRegion left={[]} center={['Danger Pass']} right={[]}/>
-        <LairRegion left={[]} center={['Lair']} right={[]}/>
+        <CityRegion left={['Alchemy Shop','Sword Shoppe']} center={['Tavern']} right={['Ye Old Magick Shop']}/>
+        <FrontierRegion left={['Fairy Circle']} center={['Final Keep']} right={['Brawn\'s Farm']}/>
+        <BorderRegion left={['Dragon Den']} center={['Soot Hills']} right={['Brawn\'s Farm']}/>
+        <WildernessRegion left={[]} center={['Danger Pass']} right={['Chasm' +        ' of Death']}/>
+        <LairRegion left={[]} center={['the Lair']} right={[]}/>
       </EvenStackedFlex>
     )
   }

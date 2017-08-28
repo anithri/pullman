@@ -21,13 +21,9 @@ function* gameStartSaga () {
   // yield put(PLAYER.shufflePersonas())
   // yield put(PLAYER.shuffleSeats())
   yield put(message.add('Getting the Game ready'))
-  yield delay(Math.random() * 2000)
   yield put(message.add('Seating the players'))
-  yield delay(Math.random() * 2000)
   yield put(message.add('Setting up the board'))
-  yield delay(Math.random() * 2000)
   yield put(message.add('Final Touches'))
-  yield delay(Math.random() * 2000)
 }
 
 function* watchGameStart () {

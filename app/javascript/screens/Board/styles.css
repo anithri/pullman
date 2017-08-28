@@ -1,17 +1,22 @@
 .board {
 
 }
+
 .region {
-  border-style: solid; /* .ba */
-  border-width: 1px;
 
 }
+
 .city {
-  background-color: var(--washed-green); /* .bg-light-green */
+  background-color: var(--washed-blue); /* .bg-washed-blue */
 
 }
 
 .frontier {
+  background-color: var(--washed-green); /* .bg-light-green */
+
+}
+
+.border {
   background-color: var(--washed-yellow); /* .bg-light-yellow */
 
 }
@@ -22,6 +27,6 @@
 }
 
 .lair {
-background-color: var(--light-purple); /* .bg-light-purple */
+  background-color: var(--light-purple); /* .bg-light-purple */
 
 }

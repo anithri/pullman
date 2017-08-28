@@ -1,6 +1,6 @@
 .game {
   composes: grid from 'styles/grid.css';
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 20rem 2fr 20rem;
   grid-template-rows: 1fr 2fr auto auto 2fr 1fr;
   grid-template-areas:  "northWest summary northEast"
                         "northWest main northEast"
