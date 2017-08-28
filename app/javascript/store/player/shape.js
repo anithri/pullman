@@ -12,6 +12,14 @@ export const player = {
   mayhem: PropTypes.number.isRequired,
   monies: PropTypes.number.isRequired,
   morale: PropTypes.number.isRequired,
+  cards: PropTypes.shape({
+    city: PropTypes.array,
+    border: PropTypes.array,
+    frontier: PropTypes.array,
+    wilderness: PropTypes.array,
+    lair: PropTypes.array
+  })
+
 }
 
 export default player

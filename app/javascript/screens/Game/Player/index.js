@@ -12,7 +12,7 @@ const propTypes = {
 class Player extends React.Component {
   render () {
     const {
-      className, id, name, skin, persona,
+      className, id, name, skin, persona, cards,
       mystery, magic, mayhem, monies, morale, menace
     } = this.props
     const myClasses = cx(
@@ -33,6 +33,7 @@ class Player extends React.Component {
           <div>Monies: {monies}</div>
           <div>Morale: {morale}</div>
           <div>Mystery: {mystery}</div>
+          <div>City Cards: {cards.city.length}</div>
         </section>
         <footer>
           Footer

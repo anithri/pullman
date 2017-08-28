@@ -1,7 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
-import addClassName from 'lib/addClassName'
 
 import styles from './styles.css'
 import TriSectionFlex from 'components/TriSectionFlex'
@@ -26,10 +24,4 @@ class Region extends React.Component {
 }
 
 export default Region
-
-export const CityRegion = addClassName(styles.city)(Region)
-export const FrontierRegion = addClassName(styles.frontier)(Region)
-export const BorderRegion = addClassName(styles.border)(Region)
-export const WildernessRegion = addClassName(styles.wilderness)(Region)
-export const LairRegion = addClassName(styles.lair)(Region)
 

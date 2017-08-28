@@ -8,8 +8,15 @@ const allPersona = {
       mystery: 2,
       mayhem: 3,
       monies: 2,
-      morale: 5
-    }
+      morale: 5,
+      cards: {
+        city: ['WizardsTower'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      },
+    },
   },
   Cultist: {
     id: 'Cultist',
@@ -20,7 +27,14 @@ const allPersona = {
       mystery: 3,
       mayhem: 2,
       monies: 2,
-      morale: 5
+      morale: 5,
+      cards: {
+        city: ['SecretTemple'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      },
     }
   },
   Monk: {
@@ -32,8 +46,15 @@ const allPersona = {
       mystery: 4,
       mayhem: 2,
       monies: 2,
-      morale: 5
-    }
+      morale: 5,
+      cards: {
+        city: ['Monastery'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      }
+    },
   },
   Rogue: {
     id: 'Rogue',
@@ -44,8 +65,15 @@ const allPersona = {
       mystery: 3,
       mayhem: 3,
       monies: 2,
-      morale: 5
-    }
+      morale: 5,
+      cards: {
+        city: ['DenOfIniquity'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      },
+    },
   },
   Sorcerer: {
     id: 'Sorcerer',
@@ -56,8 +84,15 @@ const allPersona = {
       mystery: 2,
       mayhem: 2,
       monies: 2,
-      morale: 5
-    }
+      morale: 5,
+      cards: {
+        city: ['LeyLineIntersection'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      },
+    },
   },
   Warrior: {
     id: 'Warrior',
@@ -68,9 +103,16 @@ const allPersona = {
       mystery: 2,
       mayhem: 4,
       monies: 2,
-      morale: 5
-    }
-  }
+      morale: 5,
+      cards: {
+        city: ['GladiatorPit'],
+        border: [],
+        frontier: [],
+        wilderness: [],
+        lair: []
+      },
+    },
+  },
 }
 
 

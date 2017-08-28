@@ -1,6 +1,7 @@
 import defaultPersona from './defaults'
 
 export const constants = {
+
 }
 // Action Creators
 export const actions = {

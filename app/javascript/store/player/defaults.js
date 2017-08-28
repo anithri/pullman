@@ -73,6 +73,13 @@ export const cleanPlayer = {
   locations: [],
   persona: 'Adventurer',
   isReady: true,
+  cards: {
+    city: [],
+    border: [],
+    frontier: [],
+    wilderness: [],
+    lair: []
+  }
 }
 
 export const getPlayersFor = (idArr) => {
