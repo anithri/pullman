@@ -1,4 +1,4 @@
-const masterCardList = {
+export const masterCardList = {
   InnHarmsWay: {
     id: 'InnHarmsWay',
     name: 'In Harm\'s Way'
@@ -44,7 +44,7 @@ export const regionDefaults = {
   },
   lair: {
     left: [],
-    center: ['MenancingLair'],
+    center: ['MenacingLair'],
     right: []
   },
 }

@@ -3,7 +3,7 @@ import { all, takeEvery } from 'redux-saga/effects'
 const logThis = ({type}) => type && type.startsWith('cards/')
 
 function* consoleLog(action) {
-  console.log('sagaLog:', action)
+  // console.log('sagaLog:', action)
 }
 
 function* watchConsoleLog() {

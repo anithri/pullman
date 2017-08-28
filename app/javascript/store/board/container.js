@@ -7,15 +7,14 @@ import {boardShape} from 'store/board/shape'
 
 const boardPropTypes = {
   className: PropTypes.string,
-  ...boardShape
+  ...boardShape,
 }
-
 
 const mapStateToProps = (state, props) => {
   const boardState = state.board
   return {
     className: props.className,
-    ...boardState
+    ...boardState,
   }
 }
 

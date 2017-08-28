@@ -4,12 +4,10 @@ import cx from 'classnames'
 import EvenStackedFlex from 'components/EvenStackedFlex'
 
 import styles from './styles.css'
-import Region, {CityRegion, FrontierRegion, BorderRegion,
-  WildernessRegion, LairRegion} from './Region'
 
-const propTypes = {
-  className: PropTypes.string
-}
+import OrigRegion from './Region'
+import regionContainer from 'store/board/regionContainer'
+const Region = regionContainer(OrigRegion)
 
 class Board extends React.Component {
   render() {
@@ -19,16 +17,14 @@ class Board extends React.Component {
     )
     return (
       <EvenStackedFlex className={myClasses}>
-        <CityRegion {...this.props.city}/>
-        <FrontierRegion {...this.props.frontier} />
-        <BorderRegion {...this.props.border} />
-        <WildernessRegion {...this.props.wilderness} />
-        <LairRegion {...this.props.lair} />
+        <Region name="city"/>
+        <Region name="frontier" />
+        <Region name="border" />
+        <Region name="wilderness" />
+        <Region name="lair" />
       </EvenStackedFlex>
     )
   }
 }
-
-Board.propTypes = propTypes
 
 export default Board

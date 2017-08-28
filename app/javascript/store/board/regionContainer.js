@@ -2,19 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {compose, setPropTypes} from 'recompose'
+import {allRegions} from './selectors'
 
-import <%= camelEntityName %>Shape from './shape'
+import {regionShape} from 'store/board/shape'
 
 const propTypes = {
   className: PropTypes.string,
-  ...<%= camelEntityName %>Shape
+  ...regionShape
 }
 
 const mapStateToProps = (state, props) => {
-  // const <%= camelEntityName %>State = state.<%= camelEntityName %>
-
+  const region = allRegions(state)[props.name]
   return {
-    //...<%= camelEntityName %>State
+    className: props.className,
+    ...region
   }
 }
 
@@ -30,7 +31,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
   }
 }
 
-const <%= camelEntityName %>Container = compose(
+const boardContainer = compose(
   connect(
     mapStateToProps,
     mapDispatchToProps,
@@ -39,4 +40,4 @@ const <%= camelEntityName %>Container = compose(
   setPropTypes(propTypes)
 )
 
-export default <%= camelEntityName %>Container
+export default boardContainer

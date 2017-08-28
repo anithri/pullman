@@ -7,21 +7,13 @@ import styles from './styles.css'
 import TriSectionFlex from 'components/TriSectionFlex'
 import Card from 'screens/Card'
 
-const propTypes = {
-  className: PropTypes.string,
-  cards: PropTypes.array,
-  left: PropTypes.arrayOf(PropTypes.string),
-  right: PropTypes.arrayOf(PropTypes.string),
-  center: PropTypes.arrayOf(PropTypes.string).isRequired
-}
-
 class Region extends React.Component {
   renderCards (cards) {
-    return cards.map(card => <Card name={card} key={card}/>)
+    console.log('renderCards', cards)
+    return cards.map(card => <Card name={card.name} key={card.id}/>)
   }
   render () {
     const myClasses = cx(styles.region, this.props.className)
-    console.log('REGION PROPS',this.props)
 
     return (
       <TriSectionFlex className={myClasses}
@@ -33,11 +25,7 @@ class Region extends React.Component {
   }
 }
 
-Region.propTypes = propTypes
-
 export default Region
-
-
 
 export const CityRegion = addClassName(styles.city)(Region)
 export const FrontierRegion = addClassName(styles.frontier)(Region)

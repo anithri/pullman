@@ -27,6 +27,25 @@ guard :bundler do
   files.each { |file| watch(helper.real_path(file)) }
 end
 
+
+# Usage:
+#     guard :foreman, <options hash>
+#
+# Possible options:
+# * :concurreny - how many of each type of process you would like to run (default is, sensibly, one of each)
+# * :env - one or more .env files to load
+# * :procfile - an alternate Procfile to use (default is Procfile)
+# * :port - an alternate port to use (default is 5000)
+# * :root - an alternate application root
+guard :foreman do
+  watch(/^yarn\.lock/)
+  watch(/^node_modules/)
+  watch(/^\.babelrc/)
+  watch(/^\.postcssrc.yml/)
+  watch(/^config\/webpacker\.yml/)
+  watch(/^config\/webpack\//)
+end
+
 # Guard-Rails supports a lot options with default values:
 # daemon: false                        # runs the server as a daemon.
 # debugger: false                      # enable ruby-debug gem.
@@ -46,24 +65,6 @@ end
 guard 'rails' do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
-end
-
-# Usage:
-#     guard :foreman, <options hash>
-#
-# Possible options:
-# * :concurreny - how many of each type of process you would like to run (default is, sensibly, one of each)
-# * :env - one or more .env files to load
-# * :procfile - an alternate Procfile to use (default is Procfile)
-# * :port - an alternate port to use (default is 5000)
-# * :root - an alternate application root
-guard :foreman do
-  watch(/^yarn\.lock/)
-  watch(/^node_modules/)
-  watch(/^\.babelrc/)
-  watch(/^\.postcssrc.yml/)
-  watch(/^config\/webpacker\.yml/)
-  watch(/^config\/webpack\//)
 end
 
 # guard 'livereload' do
