@@ -21,8 +21,7 @@
 
 .center {
   grid-area: center;
-  background-color: var(--black-20); /* .bg-black-20 */
-
+  background-color: var(--white-20); /* .bg-black-20 */
 }
 
 .right {

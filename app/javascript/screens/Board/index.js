@@ -19,11 +19,11 @@ class Board extends React.Component {
     )
     return (
       <EvenStackedFlex className={myClasses}>
-        <CityRegion left={['Alchemy Shop','Sword Shoppe']} center={['Tavern']} right={['Ye Old Magick Shop']}/>
-        <FrontierRegion left={['Fairy Circle']} center={['Final Keep']} right={['Brawn\'s Farm']}/>
-        <BorderRegion left={['Dragon Den']} center={['Soot Hills']} right={['Brawn\'s Farm']}/>
-        <WildernessRegion left={[]} center={['Danger Pass']} right={['Chasm' +        ' of Death']}/>
-        <LairRegion left={[]} center={['the Lair']} right={[]}/>
+        <CityRegion {...this.props.city}/>
+        <FrontierRegion {...this.props.frontier} />
+        <BorderRegion {...this.props.border} />
+        <WildernessRegion {...this.props.wilderness} />
+        <LairRegion {...this.props.lair} />
       </EvenStackedFlex>
     )
   }

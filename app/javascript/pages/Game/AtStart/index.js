@@ -17,7 +17,9 @@ import OrigGameSummary from 'screens/Summary/AtStart'
 import summaryContainer from 'store/summary/container'
 const GameSummary = summaryContainer(OrigGameSummary)
 
-import Board from 'screens/Board'
+import OrigBoard from 'screens/Board'
+import boardContainer from 'store/board/container'
+const Board = boardContainer(OrigBoard)
 
 class AtStart extends React.Component {
 

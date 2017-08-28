@@ -6,12 +6,9 @@
     --font-base-title: 'Advent Pro', var(--serif);
     --font-base-body: 'Open Sans', var(--sans-serif);
     --base-background-color: var(--cpp-blue-light);
-    --base-font-color: #663300;
+    --base-font-color: var(--near-black);
     --logo-height: 60px;
     --sidebar-width: 20rem;
     --bg-body-color: var(--black-20);
-    --graph-height: 270px;
-    --graph-width: 270px;
-
     --background-gradient: linear-gradient(to right, var(--light-blue) var(--blue));
 }

@@ -2,13 +2,14 @@
   border-style: solid; /* .ba */
   border-width: 1px;
   height: 100%;
-  width: 8rem;
+  width: 7rem;
+  background-color: var(--white-40); /* .bg-white-20 */
+
 
   & h3 {
-    font-size: var(--font-size-5); /* .f5 */
+    font-size: var(--font-size-6);
     text-align: center; /* .tc */
-
-
+    background-color: var(--black-20); /* .bg-black-20 */
   }
 }
 
