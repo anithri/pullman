@@ -3,6 +3,7 @@
 const merge = require('webpack-merge')
 const sharedConfig = require('./shared.js')
 const { settings, output } = require('./configuration.js')
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = merge(sharedConfig, {
   devtool: 'cheap-eval-source-map',
@@ -14,7 +15,7 @@ module.exports = merge(sharedConfig, {
   output: {
     pathinfo: true
   },
-
+  plugins: [new BundleAnalyzerPlugin()],
   devServer: {
     clientLogLevel: 'none',
     https: settings.dev_server.https,
@@ -30,3 +31,5 @@ module.exports = merge(sharedConfig, {
     }
   }
 })
+
+
