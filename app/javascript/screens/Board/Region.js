@@ -7,7 +7,6 @@ import Card from 'screens/Card'
 
 class Region extends React.Component {
   renderCards (cards) {
-    console.log('renderCards', cards)
     return cards.map(card => <Card name={card.name} key={card.id}/>)
   }
   render () {

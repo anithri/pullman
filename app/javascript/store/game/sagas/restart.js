@@ -1,12 +1,7 @@
-import {delay} from 'redux-saga'
-import _ from 'lodash'
-import {select, put, all, race, call, take} from 'redux-saga/effects'
+import {put, race, call, take} from 'redux-saga/effects'
 import {GAME} from '../reducers'
 import {PLAYER} from 'store/player/reducers'
-import {seats} from '../defaults'
-import {allPlayers} from 'store/player/selectors'
 import {actions as message} from 'store/messages/reducers'
-import {push} from 'react-router-redux'
 
 function* updatePlayer(attr) {
   yield call(PLAYER.update, attr)

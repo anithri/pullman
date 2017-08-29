@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 
-const gameShape = {
+export const gameShape = {
   startedAt: PropTypes.string,
   isReady: PropTypes.bool
 }
+
+export default gameShape

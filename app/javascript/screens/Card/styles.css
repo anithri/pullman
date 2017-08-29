@@ -5,11 +5,10 @@
   width: 7rem;
   background-color: var(--white-40); /* .bg-white-20 */
 
-
-  & h3 {
-    font-size: var(--font-size-6);
-    text-align: center; /* .tc */
-    background-color: var(--black-20); /* .bg-black-20 */
-  }
+}
+.card h3 {
+  font-size: var(--font-size-6);
+  text-align: center; /* .tc */
+  background-color: var(--black-20); /* .bg-black-20 */
 }
 

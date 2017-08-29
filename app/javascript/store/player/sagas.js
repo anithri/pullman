@@ -1,6 +1,4 @@
-// import { delay } from 'redux-saga'
-import _ from 'lodash'
-import { all, put, select, takeEvery } from 'redux-saga/effects'
+import { all} from 'redux-saga/effects'
 import {PLAYERS} from './reducers'
 import watchPlayerReset from './sagas/reset'
 

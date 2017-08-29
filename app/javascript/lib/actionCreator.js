@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _reduce from 'lodash/reduce'
 
 export const payloadVal = (type, payloadName = 'payload') => (payload = {}) => ({type, [payloadName]:payload})
 
@@ -31,7 +31,7 @@ export const constCreator = (prefix, actions) => {
     return obj
   }
 
-  return _.reduce(actions, constReducer, {})
+  return _reduce(actions, constReducer, {})
 }
 
 

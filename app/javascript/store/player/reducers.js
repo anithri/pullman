@@ -1,9 +1,6 @@
-import _ from 'lodash'
 import {getPlayersFor} from './defaults'
 import actionCreator, {constCreator} from 'lib/actionCreator'
 import {cleanPlayer} from './defaults'
-import {allPersonas} from 'store/persona/selectors'
-import {seats} from 'store/game/defaults'
 
 const defaultActions = [
   'update',

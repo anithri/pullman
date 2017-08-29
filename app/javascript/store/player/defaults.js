@@ -1,4 +1,5 @@
-import _ from 'lodash'
+import _sampleSize from 'lodash/sampleSize'
+
 import {skins} from 'lib/skins'
 import {seats} from 'store/game/defaults'
 
@@ -56,11 +57,11 @@ const names = ['Chief of the Reach', 'Elder of Darkness',
 
 
 const randomizeNames = (count) => {
-  return _.sampleSize(names, count)
+  return _sampleSize(names, count)
 }
 
 const randomizeSkins = (count) => {
-  return _.sampleSize(skins, count)
+  return _sampleSize(skins, count)
 }
 
 export const cleanPlayer = {
