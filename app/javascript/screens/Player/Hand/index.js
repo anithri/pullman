@@ -4,6 +4,10 @@ import cx from 'classnames'
 import playerShape from 'store/player/shape'
 import styles from './styles'
 
+import OrigCard from 'screens/Card'
+import cardContainer from 'store/card/container'
+const Card = cardContainer(OrigCard)
+
 const propTypes = {
   ...playerShape,
 }
@@ -17,7 +21,7 @@ class Stats extends React.Component {
       className,
       styles.hand
     )
-    const allCards = cards.map(card => <div key={card}>{card}</div>)
+    const allCards = cards.map(card => <Card cardId={card} key={card} />)
     return (
       <section className={myClasses}>
         {allCards}

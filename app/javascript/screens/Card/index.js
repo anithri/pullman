@@ -17,12 +17,10 @@ class Card extends React.Component {
       this.props.className,
       styles.card
     )
-    console.log('Card',this.props)
     return (
       <div className={myClasses}>
         <header>
           <h3>{this.props.name}</h3>
-          <span>{this.props.cardId}</span>
         </header>
       </div>
     )
