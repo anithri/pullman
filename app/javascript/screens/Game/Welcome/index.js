@@ -10,6 +10,7 @@ const NotReady = ({className}) => {
 }
 
 const Ready = ({startGame}) => {
+  startGame()
   return(
     <div>
       <h3>All Players ready to start</h3>

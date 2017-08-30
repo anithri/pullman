@@ -22,7 +22,6 @@ import boardContainer from 'store/board/container'
 const Board = boardContainer(OrigBoard)
 
 class AtStart extends React.Component {
-
   render () {
     return (
       <div className={styles.atStart}>
