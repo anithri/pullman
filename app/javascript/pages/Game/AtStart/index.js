@@ -9,7 +9,7 @@ import messagesContainer from 'store/messages/container'
 
 const GameMessages = messagesContainer(OrigGameMessages)
 
-import OrigGamePlayer from 'screens/Game/Player'
+import OrigGamePlayer from 'screens/Player'
 import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(OrigGamePlayer)
 

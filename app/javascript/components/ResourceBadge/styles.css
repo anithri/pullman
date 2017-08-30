@@ -1,0 +1,8 @@
+.resourceBadge {
+  padding: var(--spacing-extra-small); /* .pa1 */
+  border-style: solid; /* .ba */
+  border-width: 1px;
+  display: inline-block;
+  width: 48%;
+}
+

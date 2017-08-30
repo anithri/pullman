@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './styles.css'
 
-import OrigGamePlayer from 'screens/Game/NewPlayer'
+import OrigGamePlayer from 'screens/NewPlayer'
 import playerContainer from 'store/player/container'
 const GamePlayer = playerContainer(OrigGamePlayer)
 
