@@ -1,26 +1,26 @@
 const boardCards = {
   InnHarmsWay: {
-    id: 'InnHarmsWay',
+    cardId: 'InnHarmsWay',
     name: 'In Harm\'s Way',
     regions: ['city']
   },
   BorderKeep: {
-    id: 'BorderKeep',
+    cardId: 'BorderKeep',
     name: 'Border Keep',
     regions: ['frontier']
   },
   BleakHills: {
-    id: 'BleakHills',
+    cardId: 'BleakHills',
     name: 'Bleak Hills',
     regions: ['border']
   },
   HiddenPass: {
-    id: 'HiddenPass',
+    cardId: 'HiddenPass',
     name: 'Hidden Pass',
     regions: ['wilderness']
   },
   MenacingLair: {
-    id: 'MenacingLair',
+    cardId: 'MenacingLair',
     name: 'Menacing Lair',
     regions: ['lair']
   }

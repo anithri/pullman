@@ -21,7 +21,8 @@ class ResourceBadge extends React.Component {
     )
     return (
       <div className={myClasses}>
-        <h4>{name}<span>{value}</span></h4>
+        <h4>{name}</h4>
+        <span>{value}</span>
       </div>
     )
   }

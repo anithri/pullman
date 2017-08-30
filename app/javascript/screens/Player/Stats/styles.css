@@ -1,0 +1,64 @@
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  border: none;
+  grid-gap: var(--spacing-extra-small, 2px);
+}
+
+.magic {
+  background-color: var(--magic-highlight, white);
+  color: var(--magic-inverse, black);
+
+}
+.magic > span {
+  background-color: var(--magic-inverse, black);
+  color: var(--magic-highlight, white);
+}
+
+
+.mayhem {
+  background-color: var(--mayhem-highlight, white);
+  color: var(--mayhem-inverse, black);
+
+}
+.mayhem > span {
+  background-color: var(--mayhem-inverse, black);
+  color: var(--mayhem-highlight, white);
+}
+.menace {
+  background-color: var(--menace-highlight, white);
+  color: var(--menace-inverse, black);
+
+}
+.menace > span {
+  background-color: var(--menace-inverse, black);
+  color: var(--menace-highlight, white);
+}
+.monies {
+  background-color: var(--monies-highlight, white);
+  color: var(--monies-inverse, black);
+
+}
+.monies > span {
+  background-color: var(--monies-inverse, black);
+  color: var(--monies-highlight, white);
+}
+.morale {
+  background-color: var(--morale-highlight, white);
+  color: var(--morale-inverse, black);
+
+}
+.morale > span {
+  background-color: var(--morale-inverse, black);
+  color: var(--morale-highlight, white);
+}
+.mystery {
+  background-color: var(--mystery-highlight, white);
+  color: var(--mystery-inverse, black);
+
+}
+.mystery > span {
+  background-color: var(--mystery-inverse, black);
+  color: var(--mystery-highlight, white);
+}

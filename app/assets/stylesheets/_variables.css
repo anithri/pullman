@@ -3,12 +3,24 @@
 :root {
     --letter-spacing-normal: var(--letter-spacing-1);
     --letter-spacing-mega: var(--letter-spacing-2);
-    --font-base-title: 'Advent Pro', var(--serif);
-    --font-base-body: 'Open Sans', var(--sans-serif);
+    --font-base-title: var(--serif);
+    --font-base-body: var(--sans-serif);
     --base-background-color: var(--cpp-blue-light);
     --base-font-color: var(--near-black);
     --logo-height: 60px;
     --sidebar-width: 20rem;
     --bg-body-color: var(--black-20);
-    --background-gradient: linear-gradient(to right, var(--light-blue) var(--blue));
+
+    --magic-highlight: var(--yellow);
+    --mayhem-highlight: var(--red);
+    --menace-highlight: var(--near-black);
+    --monies-highlight: var(--near-white);
+    --morale-highlight: var(--green);
+    --mystery-highlight: var(--blue);
+    --magic-inverse: var(--near-black);
+    --mayhem-inverse: var(--near-white);
+    --menace-inverse: var(--near-white);
+    --monies-inverse: var(--near-black);
+    --morale-inverse: var(--near-black);
+    --mystery-inverse: var(--near-white);
 }

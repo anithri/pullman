@@ -1,8 +1,22 @@
 .resourceBadge {
   padding: var(--spacing-extra-small); /* .pa1 */
+  padding-left: var(--spacing-small); /* .ph3 */
+  padding-right: var(--spacing-small);
+
   border-style: solid; /* .ba */
   border-width: 1px;
-  display: inline-block;
-  width: 48%;
+  border-radius: var(--border-radius-pill); /* .br1 */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
+.resourceBadge h4 {
+  font-size: var(--font-size-6); /* .f6 */
+  font-weight: 700; /* .fw7 */
+}
+
+.resourceBadge span {
+  font-size: var(--font-size-6); /* .f5 */
+  border-radius: var(--border-radius-pill); /* .br-pill */
+  text-align: center; /* .tc */
+}

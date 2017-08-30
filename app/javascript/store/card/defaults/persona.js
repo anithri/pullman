@@ -1,31 +1,31 @@
 const personaCards = {
   GaldiatorPit: {
-    id: 'GladiatorPit',
+    cardId: 'GladiatorPit',
     name: 'Gladiator Pit',
     regions: ['city','frontier']
   },
   WizardsTower: {
-    id: 'WizardsTower',
+    cardId: 'WizardsTower',
     name: 'Wizards Tower',
     regions: ['city','frontier']
   },
   SecretTemple: {
-    id: 'SecretTemple',
+    cardId: 'SecretTemple',
     name: 'Secret Temple',
     regions: ['city','frontier']
   },
   Monestary: {
-    id: 'Monastery',
+    cardId: 'Monastery',
     name: 'Monastery',
     regions: ['city','frontier']
   },
   DenOfIniquity: {
-    id: 'DenOfIniquity',
+    cardId: 'DenOfIniquity',
     name: 'Den Of Iniquity',
     regions: ['city','frontier']
   },
   LeyLineIntersection: {
-    id: 'LeyLineIntersection',
+    cardId: 'LeyLineIntersection',
     name: 'Ley Line Intersection',
     regions: ['city','frontier']
   }

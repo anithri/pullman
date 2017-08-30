@@ -6,13 +6,12 @@ import styles from './styles.css'
 
 const propTypes = {
   className: PropTypes.string,
-  left: PropTypes.arrayOf(PropTypes.node).isRequired,
-  center: PropTypes.arrayOf(PropTypes.node).isRequired,
-  right: PropTypes.arrayOf(PropTypes.node).isRequired
+  left: PropTypes.arrayOf(PropTypes.string),
+  center: PropTypes.arrayOf(PropTypes.string),
+  right: PropTypes.arrayOf(PropTypes.string),
 }
 
 class TriSectionFlex extends React.Component {
-
   render () {
     const myClasses = cx(
       this.props.className,

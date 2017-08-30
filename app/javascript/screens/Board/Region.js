@@ -3,11 +3,14 @@ import cx from 'classnames'
 
 import styles from './styles.css'
 import TriSectionFlex from 'components/TriSectionFlex'
-import Card from 'screens/Card'
+
+import OrigCard from 'screens/Card'
+import cardContainer from 'store/card/container'
+const Card = cardContainer(OrigCard)
 
 class Region extends React.Component {
   renderCards (cards) {
-    return cards.map(card => <Card name={card.name} key={card.id}/>)
+    return cards.map(card => <Card cardId={card} key={card}/>)
   }
   render () {
     const myClasses = cx(styles.region, this.props.className)
