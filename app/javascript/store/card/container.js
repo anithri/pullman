@@ -12,9 +12,7 @@ const propTypes = {
 }
 
 const mapStateToProps = (state, props) => {
-  console.log('CardContainer',props)
   const myCard = cardsById(state)[props.cardId]
-  console.log('CardContainer',props, cardsById(state) )
   return {
     ...myCard
   }

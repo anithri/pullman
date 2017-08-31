@@ -6,9 +6,9 @@ import styles from './styles.css'
 
 const propTypes = {
   className: PropTypes.string,
-  left: PropTypes.arrayOf(PropTypes.string),
-  center: PropTypes.arrayOf(PropTypes.string),
-  right: PropTypes.arrayOf(PropTypes.string),
+  left: PropTypes.arrayOf(PropTypes.node),
+  center: PropTypes.arrayOf(PropTypes.node),
+  right: PropTypes.arrayOf(PropTypes.node),
 }
 
 class TriSectionFlex extends React.Component {

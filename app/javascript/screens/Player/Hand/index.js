@@ -21,7 +21,7 @@ class Stats extends React.Component {
       className,
       styles.hand
     )
-    const allCards = cards.map(card => <Card cardId={card} key={card} />)
+    const allCards = cards.map(card => <Card className={styles.card} cardId={card} key={card} />)
     return (
       <section className={myClasses}>
         {allCards}

@@ -1,5 +1,5 @@
 const personaCards = {
-  GaldiatorPit: {
+  GladiatorPit: {
     cardId: 'GladiatorPit',
     name: 'Gladiator Pit',
     regions: ['city','frontier']
@@ -14,7 +14,7 @@ const personaCards = {
     name: 'Secret Temple',
     regions: ['city','frontier']
   },
-  Monestary: {
+  Monastery: {
     cardId: 'Monastery',
     name: 'Monastery',
     regions: ['city','frontier']

@@ -74,7 +74,7 @@ const allPersona = {
       mayhem: 4,
       monies: 2,
       morale: 5,
-      cards: ['GladiatorPit'],
+      cards: ['GladiatorPit','FindMe'],
     },
   },
 }
