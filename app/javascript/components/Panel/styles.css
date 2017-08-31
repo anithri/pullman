@@ -23,7 +23,7 @@
   text-align: center; /* .tc */
 }
 
-.card header {
+.card > header {
   order: 1;
   flex: 0 1 auto;
   align-self: auto;

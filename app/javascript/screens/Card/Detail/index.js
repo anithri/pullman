@@ -1,14 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from '../styles.css'
+import styles from './styles.css'
 
-class Summary extends React.Component {
+class Detail extends React.Component {
   render () {
     const myClasses = cx(
       this.props.className,
       styles.card,
-      styles.summary,
       this.props.cardClass
     )
     return (
@@ -20,5 +19,5 @@ class Summary extends React.Component {
     )
   }
 }
-Summary.propTypes = {}
-export default Summary
+Detail.propTypes = {}
+export default Detail

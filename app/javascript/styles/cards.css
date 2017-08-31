@@ -1,10 +1,26 @@
 .card {
 
+}
+
+.boardCard > header {
+  background-color: var(--near-black); /* .bg-near-black */
+  color: var(--near-white); /* .near-white */
 
 }
 
-.boardCard {
-  border-width: var(--border-width-2); /* .bw2 */
+.safe > header {
+  background-color: var(--dark-green); /* .bg-dark-green */
+  color: var(--near-white); /* .near-white */
+}
+
+.caution > header {
+  background-color: var(--gold); /* .bg-gold */
+  color: var(--near-white); /* .near-white */
+}
+
+.danger > header {
+  background-color: var(--dark-red); /* .bg-dark-red */
+  color: var(--near-white); /* .near-white */
 
 }
 

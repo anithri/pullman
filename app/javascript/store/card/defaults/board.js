@@ -37,7 +37,8 @@ const boardCards = {
     cardId: 'FindMe',
     name: 'FindMe',
     regions: ['wilderness'],
-    cardClass: cx(styles.card, styles.FindMe)
+    cardClass: cx(styles.card, styles.caution, styles.FindMe)
   },
 }
 export default boardCards
+

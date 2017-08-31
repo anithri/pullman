@@ -1,14 +1,15 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from '../styles.css'
+import styles from './styles.css'
 
 class Mini extends React.Component {
   render () {
     const myClasses = cx(
       this.props.className,
       styles.card,
-      styles.mini
+      styles.mini,
+      this.props.cardClass
     )
     return (
       <div className={myClasses}>
