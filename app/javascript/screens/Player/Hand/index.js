@@ -4,13 +4,9 @@ import cx from 'classnames'
 import playerShape from 'store/player/shape'
 import styles from './styles'
 
-import OrigCard from 'screens/Card'
+import {MiniCard} from 'screens/Card'
 import cardContainer from 'store/card/container'
-const Card = cardContainer(OrigCard)
-
-const propTypes = {
-  ...playerShape,
-}
+const Card = cardContainer(MiniCard)
 
 class Stats extends React.Component {
   render () {

@@ -3,10 +3,9 @@ import cx from 'classnames'
 
 import styles from './styles.css'
 import TriSectionFlex from 'components/TriSectionFlex'
-
-import OrigCard from 'screens/Card'
+import {SummaryCard} from 'screens/Card'
 import cardContainer from 'store/card/container'
-const Card = cardContainer(OrigCard)
+const Card = cardContainer(SummaryCard)
 
 class Region extends React.Component {
   renderCards (cards) {

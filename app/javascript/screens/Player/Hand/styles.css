@@ -1,21 +1,17 @@
 .hand {
   height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 6rem;
+  grid-gap: 1px;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: flex-start;
 }
 
 .card {
-  order: 0;
-  flex: 1 1 3em;
-  align-self: auto;
+
 }
 .card > header {
+  height: 3rem;
   font-size: var(--font-size-6); /* .f6 */
   font-weight: 400; /* .fw4 */
-
 }
